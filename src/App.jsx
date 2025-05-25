@@ -33,6 +33,12 @@ import GreenShape from "./assets/images/GreenShape";
 import BlueShape from "./assets/images/BlueShape";
 import PinkShape from "./assets/images/PinkShape";
 import RedShape from "./assets/images/RedShape";
+import Dribbbble from "./assets/images/Dribbble";
+import LinkedIn from "./assets/images/LinkedIn";
+import CodeSandBox from "./assets/images/CodeSandBox";
+import GitHub from "./assets/images/GitHub";
+import CodePen from "./assets/images/CodePen";
+import SocialIconBox from "./components/SocialIconButton";
 
 export default function App() {
   const footerRef = useRef(null);
@@ -433,7 +439,32 @@ export default function App() {
             <Typography color="white" fontWeight="bold" mb={0.5}>
               Email
             </Typography>
-            <Typography color="white">info@kevinsmithdesign.com</Typography>
+            <Typography color="white" mb={3}>
+              info@kevinsmithdesign.com
+            </Typography>
+
+            <Stack flexDirection="row" gap={1} alignItems="center">
+              <SocialIconBox
+                icon={LinkedIn}
+                href="https://www.linkedin.com/in/kevinsmithdesign/"
+              />
+              <SocialIconBox
+                icon={Dribbbble}
+                href="https://dribbble.com/kevinsmithdesign"
+              />
+              <SocialIconBox
+                icon={CodeSandBox}
+                href="https://codepen.io/kevinsmithdesign"
+              />
+              <SocialIconBox
+                icon={GitHub}
+                href="https://github.com/kevinsmithdesign"
+              />
+              <SocialIconBox
+                icon={CodePen}
+                href="https://codesandbox.io/u/kevinsmithdesign"
+              />
+            </Stack>
           </Container>
         </Box>
       </footer>

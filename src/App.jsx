@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import {
@@ -34,11 +35,19 @@ import PinkShape from "./assets/images/PinkShape";
 import RedShape from "./assets/images/RedShape";
 
 export default function App() {
+  const footerRef = useRef(null);
   const cardStyles = {
     background: "#111",
     padding: "40px",
     borderRadius: "16px",
     height: "100%",
+  };
+  // Add this function inside your App component:
+  const scrollToContact = () => {
+    footerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
@@ -224,13 +233,18 @@ export default function App() {
             <Grid size={{ xs: 12, lg: 5 }}>
               <Card style={cardStyles}>
                 <Typography
-                  sx={{ fontSize: { xs: "24px", sm: "36px" } }}
+                  sx={{
+                    fontSize: { xs: "24px", sm: "36px" },
+                    lineHeight: { xs: "36px", sm: "46px" },
+                  }}
                   color="white"
                   mb={4}
                 >
                   Design that converts. Code that performs. Results that matter.
                 </Typography>
-                <Button variant="contained">Let's Talk</Button>
+                <Button variant="contained" onClick={scrollToContact}>
+                  Let's Talk
+                </Button>
               </Card>
             </Grid>
           </Grid>
@@ -394,7 +408,7 @@ export default function App() {
           </Grid>
         </Container>
       </div>
-      <footer>
+      <footer ref={footerRef}>
         <Box
           sx={{
             background: "#111",

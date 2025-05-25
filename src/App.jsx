@@ -50,21 +50,28 @@ export default function App() {
             color="white"
             mb={2}
             variant="h1"
-            sx={{ fontSize: "80px" }}
+            sx={{ fontSize: { xs: "32px", sm: "70px", md: "80px" } }}
           >
             <span style={{ color: "#745AFC" }}>I'm kevin smith,</span> a product
             designer & developer
           </Typography>
-          <Typography color="#ADB3BA" sx={{ fontSize: "24px" }}>
+          <Typography
+            color="#ADB3BA"
+            sx={{ fontSize: { xs: "12px", sm: "24px" } }}
+          >
             Designing engaging digital experiences and driving business growth
             <br />
             by bridging the gap between design and development.
           </Typography>
         </Container>
-
         <ImgCarousel />
         <Container sx={{ my: 20 }}>
-          <Typography variant="h1" color="#fff" mb={2} fontSize="80px">
+          <Typography
+            variant="h1"
+            color="#fff"
+            mb={2}
+            fontSize={{ xs: "60px", sm: "80px" }}
+          >
             SERVICES
           </Typography>
           <Grid container spacing={1} mb={1}>
@@ -175,7 +182,12 @@ export default function App() {
         </Container>
 
         <Container sx={{ my: 20 }}>
-          <Typography variant="h1" color="white" fontSize="80px" mb={2}>
+          <Typography
+            variant="h1"
+            color="white"
+            fontSize={{ xs: "60px", sm: "80px" }}
+            mb={2}
+          >
             INSIGHT
           </Typography>
 
@@ -192,7 +204,7 @@ export default function App() {
                   variant="h1"
                   color="white"
                   fontWeight="bold"
-                  sx={{ fontSize: "64px" }}
+                  sx={{ fontSize: { xs: "38px", sm: "64px" } }}
                   mb={6}
                 >
                   Discover, Design, <br />
@@ -211,7 +223,11 @@ export default function App() {
             </Grid>
             <Grid size={{ xs: 12, lg: 5 }}>
               <Card style={cardStyles}>
-                <Typography sx={{ fontSize: "36px" }} color="white" mb={4}>
+                <Typography
+                  sx={{ fontSize: { xs: "24px", sm: "36px" } }}
+                  color="white"
+                  mb={4}
+                >
                   Design that converts. Code that performs. Results that matter.
                 </Typography>
                 <Button variant="contained">Let's Talk</Button>
@@ -278,17 +294,20 @@ export default function App() {
         </Container>
 
         <Container sx={{ my: 20 }}>
-          <Typography variant="h1" color="white" fontSize="80px" mb={2}>
+          <Typography
+            variant="h1"
+            color="white"
+            fontSize={{ xs: "60px", sm: "80px" }}
+            mb={2}
+          >
             PROCESS
           </Typography>
-
           <Grid container spacing={1} mb={1}>
             <Grid size={{ xs: 12, lg: 6 }}>
               <Card style={cardStyles}>
                 <Box sx={{ height: "122px", background: "", mb: 2 }}>
                   <DiscoveryResearch />
                 </Box>
-
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
                   Discover & Research
                 </Typography>
@@ -319,7 +338,6 @@ export default function App() {
                 <Box sx={{ height: "133px", mb: 2, background: "" }}>
                   <DesignPrototype />
                 </Box>
-
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
                   Design & Prototype
                 </Typography>
@@ -350,7 +368,6 @@ export default function App() {
                 <Box sx={{ height: "94px", background: "", mb: 2 }}>
                   <TestingQualityAssurance />
                 </Box>
-
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
                   Testing & Quality Assurance
                 </Typography>
@@ -383,6 +400,7 @@ export default function App() {
             background: "#111",
             width: "100%",
             py: 12,
+            px: 4,
             borderTopLeftRadius: "24px",
             borderTopRightRadius: "24px",
           }}

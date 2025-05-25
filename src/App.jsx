@@ -306,7 +306,7 @@ export default function App() {
                   Design Systems Built
                 </Typography>
                 <Typography variant="body1" color="#999">
-                  With Tokens, Guidelines, and Code Integration.
+                  With tokens, guidelines, and code integration.
                 </Typography>
               </Card>
             </Grid>

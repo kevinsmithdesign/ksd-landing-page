@@ -90,9 +90,21 @@ export default function App() {
             SERVICES
           </Typography>
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 5 }}>
+            <Grid size={{ xs: 12, md: 5 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "133px", mb: 2 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "340px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
+                  {" "}
                   <Uiuxmockup />
                 </Box>
 
@@ -105,9 +117,20 @@ export default function App() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 7 }}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "133px", mb: 2 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "542px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <VisualDesign />
                 </Box>
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
@@ -121,9 +144,20 @@ export default function App() {
             </Grid>
           </Grid>
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "86px", mb: 2, background: "" }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "402px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <DesignSystem />
                 </Box>
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
@@ -136,7 +170,7 @@ export default function App() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
                 <Box
                   sx={{
@@ -158,30 +192,49 @@ export default function App() {
             </Grid>
           </Grid>
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 5 }}>
-              <Card sx={{ background: "#111", height: "100%" }}>
-                <Box sx={{ height: "60px", mb: 2, background: "" }}>
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Card style={cardStyles}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "402px",
+                    display: "flex",
+                    height: "102px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <FrontEnd />
                 </Box>
-                <Box sx={{ px: 4, pt: 10.5 }}>
-                  <Typography
-                    variant="h4"
-                    color="white"
-                    fontWeight="bold"
-                    mb={1}
-                  >
-                    Front-End Development
-                  </Typography>
-                  <Typography variant="body1" color="#999">
-                    Transforming designs into responsive, accessible code with
-                    modern frameworks that deliver exceptional experiences.
-                  </Typography>
-                </Box>
+                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                  Front-End Development
+                </Typography>
+                <Typography variant="body1" color="#999">
+                  Transforming designs into responsive, accessible code with
+                  modern frameworks that deliver exceptional experiences.
+                </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 7 }}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "103px", mb: 2, background: "" }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "460px",
+                    display: "flex",
+                    height: "102px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <BridgeGap />
                 </Box>
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
@@ -207,7 +260,7 @@ export default function App() {
           </Typography>
 
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 7 }}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Card
                 sx={{
                   background: "#111",
@@ -236,7 +289,7 @@ export default function App() {
                 </Stack>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 5 }}>
+            <Grid size={{ xs: 12, md: 5 }}>
               <Card style={cardStyles}>
                 <Typography
                   sx={{
@@ -255,7 +308,7 @@ export default function App() {
             </Grid>
           </Grid>
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 4 }}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card style={cardStyles} sx={{ height: "600px" }}>
                 <Typography
                   variant="h1"
@@ -273,7 +326,7 @@ export default function App() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 4 }}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card style={cardStyles}>
                 <Typography
                   variant="h1"
@@ -292,7 +345,7 @@ export default function App() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 4 }}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card style={cardStyles}>
                 <Typography
                   variant="h1"
@@ -323,11 +376,23 @@ export default function App() {
             PROCESS
           </Typography>
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "122px", background: "", mb: 2 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "390px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <DiscoveryResearch />
                 </Box>
+
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
                   Discover & Research
                 </Typography>
@@ -337,11 +402,23 @@ export default function App() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "122px", mb: 2, background: "" }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "360px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <StrategyPlanning />
                 </Box>
+
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
                   Strategy & Planning
                 </Typography>
@@ -353,11 +430,23 @@ export default function App() {
             </Grid>
           </Grid>
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 5 }}>
+            <Grid size={{ xs: 12, md: 5 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "133px", mb: 2, background: "" }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "270px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <DesignPrototype />
                 </Box>
+
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
                   Design & Prototype
                 </Typography>
@@ -367,9 +456,20 @@ export default function App() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 7 }}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "140px", mb: 2 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "470px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <DevelopmentImplementation />
                 </Box>
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
@@ -383,9 +483,23 @@ export default function App() {
             </Grid>
           </Grid>
           <Grid container spacing={1} mb={1}>
-            <Grid size={{ xs: 12, lg: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "94px", background: "", mb: 2 }}>
+                {/* <Box sx={{ height: "94px", background: "", mb: 2 }}>
+                  <TestingQualityAssurance />
+                </Box> */}
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "400px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <TestingQualityAssurance />
                 </Box>
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
@@ -397,9 +511,23 @@ export default function App() {
                 </Typography>
               </Card>
             </Grid>
-            <Grid size={{ xs: 12, lg: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
-                <Box sx={{ height: "122px", background: "", mb: 2 }}>
+                {/* <Box sx={{ height: "122px", background: "", mb: 2 }}>
+                  <LaunchOptimization />
+                </Box> */}
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "480px",
+                    mb: 2,
+                    "& svg": {
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    },
+                  }}
+                >
                   <LaunchOptimization />
                 </Box>
                 <Typography variant="h4" color="white" fontWeight="bold" mb={1}>

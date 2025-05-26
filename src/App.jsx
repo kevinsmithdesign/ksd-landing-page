@@ -65,19 +65,20 @@ export default function App() {
             color="white"
             mb={2}
             variant="h1"
-            sx={{ fontSize: { xs: "32px", sm: "70px", md: "80px" } }}
+            sx={{ fontSize: { xs: "40px", sm: "70px", md: "80px" } }}
           >
             <span style={{ color: "#745AFC" }}>I'm kevin smith,</span> a product
             designer & developer
           </Typography>
-          <Typography
-            color="#ADB3BA"
-            sx={{ fontSize: { xs: "12px", sm: "24px" } }}
-          >
-            Designing engaging digital experiences and driving business growth
-            <br />
-            by bridging the gap between design and development.
-          </Typography>
+          <Box sx={{ mx: "auto", maxWidth: "760px" }}>
+            <Typography
+              color="#ADB3BA"
+              sx={{ fontSize: { xs: "16px", sm: "24px" } }}
+            >
+              Designing engaging digital experiences and driving business growth
+              by bridging the gap between design and development.
+            </Typography>
+          </Box>
         </Container>
         <ImgCarousel />
         <Container sx={{ my: 20 }}>
@@ -256,7 +257,7 @@ export default function App() {
             fontSize={{ xs: "60px", sm: "80px" }}
             mb={2}
           >
-            INSIGHT
+            IMPACT
           </Typography>
 
           <Grid container spacing={1} mb={1}>
@@ -272,7 +273,7 @@ export default function App() {
                   variant="h1"
                   color="white"
                   fontWeight="bold"
-                  sx={{ fontSize: { xs: "38px", sm: "64px" } }}
+                  sx={{ fontSize: { xs: "34px", sm: "64px" } }}
                   mb={6}
                 >
                   Discover, Design, <br />

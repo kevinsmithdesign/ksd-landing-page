@@ -9,6 +9,9 @@ import {
   Typography,
   Box,
   Stack,
+  Badge,
+  Chip,
+  Tooltip,
 } from "@mui/material";
 import theme from "./theme";
 
@@ -40,6 +43,13 @@ import GitHub from "./assets/images/GitHub";
 import CodePen from "./assets/images/CodePen";
 import SocialIconBox from "./components/SocialIconButton";
 
+import SprintView from "./assets/images/SprintView.svg";
+import CreditFlow from "./assets/images/CreditFlow.svg";
+import FoodApp from "./assets/images/FoodApp.svg";
+import RealEstateApp from "./assets/images/RealEstateApp.svg";
+import { style } from "framer-motion/client";
+import LightDarkModeToggle from "./components/LightDarkModeToggle";
+
 export default function App() {
   const footerRef = useRef(null);
   const cardStyles = {
@@ -60,7 +70,11 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
-        <Container sx={{ my: 12, textAlign: "center" }}>
+        <Container sx={{ display: "flex", justifyContent: "flex-end", pt: 2 }}>
+          <LightDarkModeToggle />
+        </Container>
+
+        <Container sx={{ py: 12, textAlign: "center" }}>
           <Typography
             color="white"
             mb={2}
@@ -486,9 +500,6 @@ export default function App() {
           <Grid container spacing={1} mb={1}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
-                {/* <Box sx={{ height: "94px", background: "", mb: 2 }}>
-                  <TestingQualityAssurance />
-                </Box> */}
                 <Box
                   sx={{
                     width: "100%",
@@ -514,9 +525,6 @@ export default function App() {
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
               <Card style={cardStyles}>
-                {/* <Box sx={{ height: "122px", background: "", mb: 2 }}>
-                  <LaunchOptimization />
-                </Box> */}
                 <Box
                   sx={{
                     width: "100%",
@@ -541,6 +549,261 @@ export default function App() {
               </Card>
             </Grid>
           </Grid>
+        </Container>
+
+        <Container sx={{ my: 20 }}>
+          <Typography
+            variant="h1"
+            color="white"
+            fontSize={{ xs: "60px", sm: "80px" }}
+            mb={2}
+          >
+            WORK
+          </Typography>
+
+          <Card style={cardStyles} sx={{ mb: 1 }}>
+            <Grid container spacing={10}>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    // mb: 2,
+                  }}
+                >
+                  <img
+                    src={SprintView}
+                    alt="Sprint View"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      borderRadius: "12px",
+                    }}
+                  />
+                </Box>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    height: "100%",
+                  }}
+                >
+                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
+                  <Typography
+                    variant="h3"
+                    // sx={{ fontSize: "36px" }}
+                    color="white"
+                    fontWeight="bold"
+                    mb={2}
+                  >
+                    SprintView
+                  </Typography>
+
+                  <Typography variant="body1" color="#999" mb={6}>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </Typography>
+                  <Tooltip
+                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
+                    placement="bottom-start"
+                  >
+                    <span>
+                      <Button disabled variant="contained">
+                        View Project
+                      </Button>
+                    </span>
+                  </Tooltip>
+                </Box>
+              </Grid>
+            </Grid>
+          </Card>
+          <Card style={cardStyles} sx={{ mb: 1 }}>
+            <Grid container spacing={10}>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    // mb: 2,
+                  }}
+                >
+                  <img
+                    src={CreditFlow}
+                    alt="Credit Flow"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      borderRadius: "12px",
+                    }}
+                  />
+                </Box>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    height: "100%",
+                  }}
+                >
+                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
+                  <Typography
+                    variant="h3"
+                    color="white"
+                    fontWeight="bold"
+                    mb={2}
+                  >
+                    Credit Flow
+                  </Typography>
+                  <Typography variant="body1" color="#999" mb={6}>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </Typography>
+                  <Tooltip
+                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
+                    placement="bottom-start"
+                  >
+                    <span>
+                      <Button disabled variant="contained">
+                        View Project
+                      </Button>
+                    </span>
+                  </Tooltip>
+                </Box>
+              </Grid>
+            </Grid>
+          </Card>
+          <Card style={cardStyles} sx={{ mb: 1 }}>
+            <Grid container spacing={10}>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    // mb: 2,
+                  }}
+                >
+                  <img
+                    src={FoodApp}
+                    alt="Food App"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      borderRadius: "12px",
+                    }}
+                  />
+                </Box>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    height: "100%",
+                  }}
+                >
+                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
+                  <Typography
+                    variant="h3"
+                    color="white"
+                    fontWeight="bold"
+                    mb={2}
+                  >
+                    Title
+                  </Typography>
+
+                  <Typography variant="body1" color="#999" mb={6}>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </Typography>
+                  <Tooltip
+                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
+                    placement="bottom-start"
+                  >
+                    <span>
+                      <Button disabled variant="contained">
+                        View Project
+                      </Button>
+                    </span>
+                  </Tooltip>
+                </Box>
+              </Grid>
+            </Grid>
+          </Card>
+          <Card style={cardStyles} sx={{ mb: 1 }}>
+            <Grid container spacing={10}>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    // mb: 2,
+                  }}
+                >
+                  <img
+                    src={RealEstateApp}
+                    alt="Madison Group UI"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      borderRadius: "12px",
+                    }}
+                  />
+                </Box>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    height: "100%",
+                  }}
+                >
+                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
+                  <Typography
+                    variant="h3"
+                    color="white"
+                    fontWeight="bold"
+                    mb={2}
+                  >
+                    Title 1
+                  </Typography>
+                  <Typography variant="body1" color="#999" mb={6}>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </Typography>
+                  <Tooltip
+                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
+                    placement="bottom-start"
+                  >
+                    <span>
+                      <Button disabled variant="contained">
+                        View Project
+                      </Button>
+                    </span>
+                  </Tooltip>
+                </Box>
+              </Grid>
+            </Grid>
+          </Card>
         </Container>
       </div>
       <footer ref={footerRef}>

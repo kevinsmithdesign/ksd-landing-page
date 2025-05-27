@@ -104,6 +104,10 @@ const theme = createTheme({
             boxShadow: "0 6px 10px rgba(25, 118, 210, 0.1)",
             backgroundColor: (theme) => theme.palette.primary.dark,
           },
+          "&:disabled": {
+            backgroundColor: "#333",
+            color: "#111",
+          },
         },
       },
       defaultProps: {

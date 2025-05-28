@@ -44,13 +44,9 @@ import CodeSandBox from "./assets/images/CodeSandBox";
 import GitHub from "./assets/images/GitHub";
 import CodePen from "./assets/images/CodePen";
 import SocialIconBox from "./components/SocialIconButton";
-
-import SprintView from "./assets/images/SprintView.svg";
-import CreditFlow from "./assets/images/CreditFlow.svg";
-import FoodApp from "./assets/images/FoodApp.svg";
-import RealEstateApp from "./assets/images/RealEstateApp.svg";
-import { style } from "framer-motion/client";
 import LightDarkModeToggle from "./components/LightDarkModeToggle";
+import DesignWork from "./components/DesignWork";
+import DevelopmentWork from "./components/DevelopmentWork";
 
 export default function App() {
   const footerRef = useRef(null);
@@ -65,6 +61,7 @@ export default function App() {
   const [themeMode, setThemeMode] = useState("dark");
   const theme = useMemo(() => createCustomTheme(themeMode), [themeMode]);
   const handleThemeChange = (mode) => setThemeMode(mode);
+  const [activeTab, setActiveTab] = useState("Design");
 
   // Add this function inside your App component:
   const scrollToContact = () => {
@@ -72,6 +69,18 @@ export default function App() {
       behavior: "smooth",
       block: "start",
     });
+  };
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
+  const getTextColor = (tabName) => {
+    if (theme.palette.mode === "dark") {
+      return "#fff";
+    }
+    // Light mode
+    return activeTab === tabName ? "#fff" : "#333";
   };
 
   return (
@@ -635,258 +644,78 @@ export default function App() {
         </Container>
 
         <Container sx={{ my: 20 }}>
-          <Typography
-            variant="h1"
-            color="text.primary"
-            fontSize={{ xs: "60px", sm: "80px" }}
-            mb={2}
-          >
-            WORK
-          </Typography>
+          <Stack flexDirection="row" mb={2} alignItems="center">
+            <Stack flexGrow={1}>
+              <Typography
+                variant="h1"
+                color="text.primary"
+                fontSize={{ xs: "60px", sm: "80px" }}
+              >
+                WORK
+              </Typography>
+            </Stack>
+            <Stack flexDirection="row" gap={0.5}>
+              <Box
+                onClick={() => handleTabClick("Design")}
+                sx={{
+                  padding: "12px 24px",
+                  background:
+                    activeTab === "Design"
+                      ? theme.palette.primary.main
+                      : "transparent",
+                  borderRadius: "32px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  transition: "background-color 0.2s ease",
+                  color: getTextColor("Design"),
+                  "&:hover": {
+                    background:
+                      activeTab === "Design"
+                        ? theme.palette.primary.main
+                        : theme.palette.action.hover,
+                  },
+                }}
+              >
+                Design
+              </Box>
+              <Box
+                onClick={() => handleTabClick("Development")}
+                sx={{
+                  padding: "12px 24px",
+                  background:
+                    activeTab === "Development"
+                      ? theme.palette.primary.main
+                      : "transparent",
+                  borderRadius: "32px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  color: getTextColor("Development"),
+                  transition: "background-color 0.2s ease",
+                  "&:hover": {
+                    background:
+                      activeTab === "Development"
+                        ? theme.palette.primary.main
+                        : theme.palette.action.hover,
+                  },
+                }}
+              >
+                Development
+              </Box>
+            </Stack>
+          </Stack>
 
-          <Card style={cardStyles} sx={{ mb: 1 }}>
-            <Grid container spacing={10}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    width: "100%",
-                    // mb: 2,
-                  }}
-                >
-                  <img
-                    src={SprintView}
-                    alt="Sprint View"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                      borderRadius: "12px",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    height: "100%",
-                  }}
-                >
-                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
-                  <Typography
-                    variant="h3"
-                    // sx={{ fontSize: "36px" }}
-                    color="text.primary"
-                    fontWeight="bold"
-                    mb={2}
-                  >
-                    SprintView
-                  </Typography>
-
-                  <Typography variant="body1" color="text.secondary" mb={6}>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </Typography>
-                  <Tooltip
-                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
-                    placement="bottom-start"
-                  >
-                    <span>
-                      <Button disabled variant="contained">
-                        View Project
-                      </Button>
-                    </span>
-                  </Tooltip>
-                </Box>
-              </Grid>
-            </Grid>
-          </Card>
-          <Card style={cardStyles} sx={{ mb: 1 }}>
-            <Grid container spacing={10}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    width: "100%",
-                    // mb: 2,
-                  }}
-                >
-                  <img
-                    src={CreditFlow}
-                    alt="Credit Flow"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                      borderRadius: "12px",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    height: "100%",
-                  }}
-                >
-                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
-                  <Typography
-                    variant="h3"
-                    color="text.primary"
-                    fontWeight="bold"
-                    mb={2}
-                  >
-                    Credit Flow
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" mb={6}>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </Typography>
-                  <Tooltip
-                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
-                    placement="bottom-start"
-                  >
-                    <span>
-                      <Button disabled variant="contained">
-                        View Project
-                      </Button>
-                    </span>
-                  </Tooltip>
-                </Box>
-              </Grid>
-            </Grid>
-          </Card>
-          <Card style={cardStyles} sx={{ mb: 1 }}>
-            <Grid container spacing={10}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    width: "100%",
-                    // mb: 2,
-                  }}
-                >
-                  <img
-                    src={FoodApp}
-                    alt="Food App"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                      borderRadius: "12px",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    height: "100%",
-                  }}
-                >
-                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
-                  <Typography
-                    variant="h3"
-                    color="text.primary"
-                    fontWeight="bold"
-                    mb={2}
-                  >
-                    Title
-                  </Typography>
-
-                  <Typography variant="body1" color="text.secondary" mb={6}>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </Typography>
-                  <Tooltip
-                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
-                    placement="bottom-start"
-                  >
-                    <span>
-                      <Button disabled variant="contained">
-                        View Project
-                      </Button>
-                    </span>
-                  </Tooltip>
-                </Box>
-              </Grid>
-            </Grid>
-          </Card>
-          <Card style={cardStyles} sx={{ mb: 1 }}>
-            <Grid container spacing={10}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    width: "100%",
-                    // mb: 2,
-                  }}
-                >
-                  <img
-                    src={RealEstateApp}
-                    alt="Madison Group UI"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                      borderRadius: "12px",
-                    }}
-                  />
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    height: "100%",
-                  }}
-                >
-                  <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
-                  <Typography
-                    variant="h3"
-                    color="text.primary"
-                    fontWeight="bold"
-                    mb={2}
-                  >
-                    Title 1
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" mb={6}>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </Typography>
-                  <Tooltip
-                    title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
-                    placement="bottom-start"
-                  >
-                    <span>
-                      <Button disabled variant="contained">
-                        View Project
-                      </Button>
-                    </span>
-                  </Tooltip>
-                </Box>
-              </Grid>
-            </Grid>
-          </Card>
+          <Stack>
+            {activeTab === "Design" && (
+              <>
+                <DesignWork />
+              </>
+            )}
+            {activeTab === "Development" && (
+              <>
+                <DevelopmentWork />
+              </>
+            )}
+          </Stack>
         </Container>
       </div>
       <footer ref={footerRef}>

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useMemo } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import {
@@ -12,8 +12,10 @@ import {
   Badge,
   Chip,
   Tooltip,
+  useTheme,
 } from "@mui/material";
 import theme from "./theme";
+import { createCustomTheme } from "./theme";
 
 import Uiuxmockup from "./assets/images/Uiuxmockup";
 import VisualDesign from "./assets/images/VisualDesign";
@@ -52,12 +54,18 @@ import LightDarkModeToggle from "./components/LightDarkModeToggle";
 
 export default function App() {
   const footerRef = useRef(null);
+  const themeColor = useTheme();
   const cardStyles = {
-    background: "#111",
+    // background: themeColor.palette.mode === "light" ? "#fff" : "#111",
     padding: "40px",
     borderRadius: "16px",
     height: "100%",
   };
+
+  const [themeMode, setThemeMode] = useState("dark");
+  const theme = useMemo(() => createCustomTheme(themeMode), [themeMode]);
+  const handleThemeChange = (mode) => setThemeMode(mode);
+
   // Add this function inside your App component:
   const scrollToContact = () => {
     footerRef.current?.scrollIntoView({
@@ -70,13 +78,13 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
-        <Container sx={{ display: "flex", justifyContent: "flex-end", pt: 2 }}>
-          <LightDarkModeToggle />
-        </Container>
+        <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 3, pr: 3 }}>
+          <LightDarkModeToggle onThemeChange={handleThemeChange} />
+        </Box>
 
         <Container sx={{ py: 12, textAlign: "center" }}>
           <Typography
-            color="white"
+            color="text.priamry"
             mb={2}
             variant="h1"
             sx={{ fontSize: { xs: "40px", sm: "70px", md: "80px" } }}
@@ -98,7 +106,7 @@ export default function App() {
         <Container sx={{ my: 20 }}>
           <Typography
             variant="h1"
-            color="#fff"
+            color="text.primary"
             mb={2}
             fontSize={{ xs: "60px", sm: "80px" }}
           >
@@ -123,10 +131,15 @@ export default function App() {
                   <Uiuxmockup />
                 </Box>
 
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   UI/UX Design
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Creating user-centered experiences through research and
                   testing that solve real problems and drive engagement.
                 </Typography>
@@ -148,10 +161,15 @@ export default function App() {
                 >
                   <VisualDesign />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Visual Design
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Crafting distinctive visual identities that communicate values
                   and create meaningful connections with your audience.
                 </Typography>
@@ -175,10 +193,15 @@ export default function App() {
                 >
                   <DesignSystem />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Design Systems
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Building scalable, consistent frameworks with reusable
                   components that streamline development and ensure brand
                   coherence.
@@ -195,10 +218,15 @@ export default function App() {
                 >
                   <Loader />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Motion & Animation
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Adding life to interfaces through purposeful motion design
                   that guides attention, provides feedback, and creates
                   memorable interactions.
@@ -225,10 +253,15 @@ export default function App() {
                 >
                   <FrontEnd />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Front-End Development
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Transforming designs into responsive, accessible code with
                   modern frameworks that deliver exceptional experiences.
                 </Typography>
@@ -252,10 +285,15 @@ export default function App() {
                 >
                   <BridgeGap />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Bridge the Gap
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Connecting design vision with technical implementation through
                   effective communication and optimized workflows.
                 </Typography>
@@ -267,7 +305,7 @@ export default function App() {
         <Container sx={{ my: 20 }}>
           <Typography
             variant="h1"
-            color="white"
+            color="text.primary"
             fontSize={{ xs: "60px", sm: "80px" }}
             mb={2}
           >
@@ -278,14 +316,13 @@ export default function App() {
             <Grid size={{ xs: 12, md: 7 }}>
               <Card
                 sx={{
-                  background: "#111",
                   padding: "40px",
                   borderRadius: "16px",
                 }}
               >
                 <Typography
                   variant="h1"
-                  color="white"
+                  color="text.primary"
                   fontWeight="bold"
                   sx={{ fontSize: { xs: "34px", sm: "64px" } }}
                   mb={6}
@@ -311,7 +348,8 @@ export default function App() {
                     fontSize: { xs: "24px", sm: "36px" },
                     lineHeight: { xs: "36px", sm: "46px" },
                   }}
-                  color="white"
+                  color="text.primary"
+                  fontWeight={500}
                   mb={4}
                 >
                   Design that converts. Code that performs. Results that matter.
@@ -328,15 +366,20 @@ export default function App() {
                 <Typography
                   variant="h1"
                   sx={{ fontSize: "96px", fontWeight: 600 }}
-                  color="white"
+                  color="text.primary"
                   mb={6}
                 >
                   10+
                 </Typography>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Years of Experience
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Combining design expertise and development skill.
                 </Typography>
               </Card>
@@ -346,15 +389,20 @@ export default function App() {
                 <Typography
                   variant="h1"
                   sx={{ fontSize: "96px", fontWeight: 600 }}
-                  color="white"
+                  color="text.primary"
                   mb={6}
                 >
                   8+
                 </Typography>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Products Launched
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   From initial minimum viable products to fully-scaled
                   production platforms.
                 </Typography>
@@ -365,15 +413,20 @@ export default function App() {
                 <Typography
                   variant="h1"
                   sx={{ fontSize: "96px", fontWeight: 600 }}
-                  color="white"
+                  color="text.primary"
                   mb={6}
                 >
                   4+
                 </Typography>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Design Systems Built
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   With tokens, guidelines, and code integration.
                 </Typography>
               </Card>
@@ -384,7 +437,7 @@ export default function App() {
         <Container sx={{ my: 20 }}>
           <Typography
             variant="h1"
-            color="white"
+            color="text.primary"
             fontSize={{ xs: "60px", sm: "80px" }}
             mb={2}
           >
@@ -408,10 +461,15 @@ export default function App() {
                   <DiscoveryResearch />
                 </Box>
 
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Discover & Research
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Understanding your business goals and user needs through
                   targeted research to identify key opportunities.
                 </Typography>
@@ -434,10 +492,15 @@ export default function App() {
                   <StrategyPlanning />
                 </Box>
 
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Strategy & Planning
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Developing a focused roadmap with key features and user flows
                   to ensure we solve the right problems.
                 </Typography>
@@ -462,10 +525,15 @@ export default function App() {
                   <DesignPrototype />
                 </Box>
 
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Design & Prototype
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Creating intuitive, visual solutions and refining through
                   iterative prototyping and testing.
                 </Typography>
@@ -487,10 +555,15 @@ export default function App() {
                 >
                   <DevelopmentImplementation />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Development & Implementation
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Building responsive, accessible experiences with clean code
                   that performs across all devices.
                 </Typography>
@@ -514,10 +587,15 @@ export default function App() {
                 >
                   <TestingQualityAssurance />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Testing & Quality Assurance
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Ensuring functionality, performance, and user experience
                   through comprehensive testing and refinement.
                 </Typography>
@@ -539,10 +617,15 @@ export default function App() {
                 >
                   <LaunchOptimization />
                 </Box>
-                <Typography variant="h4" color="white" fontWeight="bold" mb={1}>
+                <Typography
+                  variant="h4"
+                  color="text.primary"
+                  fontWeight="bold"
+                  mb={1}
+                >
                   Launch & Optimization
                 </Typography>
-                <Typography variant="body1" color="#999">
+                <Typography variant="body1" color="text.secondary">
                   Deploying solutions and continuously improving based on
                   performance data and user feedback.
                 </Typography>
@@ -554,7 +637,7 @@ export default function App() {
         <Container sx={{ my: 20 }}>
           <Typography
             variant="h1"
-            color="white"
+            color="text.primary"
             fontSize={{ xs: "60px", sm: "80px" }}
             mb={2}
           >
@@ -595,14 +678,14 @@ export default function App() {
                   <Typography
                     variant="h3"
                     // sx={{ fontSize: "36px" }}
-                    color="white"
+                    color="text.primary"
                     fontWeight="bold"
                     mb={2}
                   >
                     SprintView
                   </Typography>
 
-                  <Typography variant="body1" color="#999" mb={6}>
+                  <Typography variant="body1" color="text.secondary" mb={6}>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown
@@ -656,13 +739,13 @@ export default function App() {
                   <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
                   <Typography
                     variant="h3"
-                    color="white"
+                    color="text.primary"
                     fontWeight="bold"
                     mb={2}
                   >
                     Credit Flow
                   </Typography>
-                  <Typography variant="body1" color="#999" mb={6}>
+                  <Typography variant="body1" color="text.secondary" mb={6}>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown
@@ -716,14 +799,14 @@ export default function App() {
                   <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
                   <Typography
                     variant="h3"
-                    color="white"
+                    color="text.primary"
                     fontWeight="bold"
                     mb={2}
                   >
                     Title
                   </Typography>
 
-                  <Typography variant="body1" color="#999" mb={6}>
+                  <Typography variant="body1" color="text.secondary" mb={6}>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown
@@ -777,13 +860,13 @@ export default function App() {
                   <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
                   <Typography
                     variant="h3"
-                    color="white"
+                    color="text.primary"
                     fontWeight="bold"
                     mb={2}
                   >
                     Title 1
                   </Typography>
-                  <Typography variant="body1" color="#999" mb={6}>
+                  <Typography variant="body1" color="text.secondary" mb={6}>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown

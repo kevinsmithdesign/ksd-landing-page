@@ -4,6 +4,9 @@ import { Box, useTheme, Typography } from "@mui/material";
 const Loader = () => {
   const theme = useTheme();
 
+  const fillColor = theme.palette.mode === "light" ? "#E4E8EE" : "#222";
+  const textColor = theme.palette.mode === "light" ? "#333" : "#fff";
+
   return (
     <Box
       sx={{
@@ -16,14 +19,20 @@ const Loader = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h6" mb={1} mt={3} color="white" textAlign="center">
+      <Typography
+        variant="h6"
+        mb={1}
+        mt={3}
+        color={textColor}
+        textAlign="center"
+      >
         Loading...
       </Typography>
       <Box
         sx={{
           width: "70%",
-          height: "12px",
-          background: "#222",
+          height: "10px",
+          background: fillColor,
           borderRadius: "8px",
           margin: "0 auto",
         }}
@@ -31,7 +40,7 @@ const Loader = () => {
         <Box
           sx={{
             width: "20%",
-            height: "12px",
+            height: "10px",
             background: theme.palette.primary.main,
             borderRadius: "8px",
           }}

@@ -42,6 +42,7 @@ const DevelopmentWork = () => {
               <img
                 src={PromptRank}
                 alt="Prompt Rank Model Compairson Page"
+                loading="lazy"
                 style={{
                   width: "100%",
                   height: "auto",
@@ -105,6 +106,7 @@ const DevelopmentWork = () => {
               <img
                 src={WLDesignSystem}
                 alt="Design System UI"
+                loading="lazy"
                 style={{
                   width: "100%",
                   height: "auto",
@@ -137,22 +139,18 @@ const DevelopmentWork = () => {
                 building consistent, scalable, and accessible user interfaces,
                 with support for multiple themes.
               </Typography>
-              <Tooltip
-                title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
-                placement="bottom-start"
-              >
-                <Stack flexDirection="row">
-                  <Button
-                    variant="contained"
-                    component="a"
-                    href="https://whitelabeldesignsystem.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Site
-                  </Button>
-                </Stack>
-              </Tooltip>
+
+              <Stack flexDirection="row">
+                <Button
+                  variant="contained"
+                  component="a"
+                  href="https://whitelabeldesignsystem.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Site
+                </Button>
+              </Stack>
             </Box>
           </Grid>
         </Grid>

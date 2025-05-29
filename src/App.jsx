@@ -47,6 +47,8 @@ import SocialIconBox from "./components/SocialIconButton";
 import LightDarkModeToggle from "./components/LightDarkModeToggle";
 import DesignWork from "./components/DesignWork";
 import DevelopmentWork from "./components/DevelopmentWork";
+import DesignWorkWrapper from "./components/DesignWorkWrapper";
+import DevelopmentWorkWrapper from "./components/DevelopmentWorkWrapper";
 
 export default function App() {
   const footerRef = useRef(null);
@@ -59,6 +61,7 @@ export default function App() {
   };
 
   const [themeMode, setThemeMode] = useState("dark");
+
   const theme = useMemo(() => createCustomTheme(themeMode), [themeMode]);
   const handleThemeChange = (mode) => setThemeMode(mode);
   const [activeTab, setActiveTab] = useState("Design");
@@ -703,7 +706,7 @@ export default function App() {
               </Box>
             </Stack>
           </Stack>
-
+          {/* 
           <Stack>
             {activeTab === "Design" && (
               <>
@@ -715,6 +718,10 @@ export default function App() {
                 <DevelopmentWork />
               </>
             )}
+          </Stack> */}
+          <Stack>
+            {activeTab === "Design" && <DesignWorkWrapper />}
+            {activeTab === "Development" && <DevelopmentWorkWrapper />}
           </Stack>
         </Container>
       </div>

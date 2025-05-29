@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Container,
@@ -100,6 +100,7 @@ const DesignWork = () => {
               <img
                 src={CreditFlow}
                 alt="Credit Flow"
+                loading="lazy"
                 style={{
                   width: "100%",
                   height: "auto",
@@ -159,6 +160,7 @@ const DesignWork = () => {
               <img
                 src={FoodApp}
                 alt="Food App"
+                loading="lazy"
                 style={{
                   width: "100%",
                   height: "auto",
@@ -219,6 +221,7 @@ const DesignWork = () => {
               <img
                 src={RealEstateApp}
                 alt="Madison Group UI"
+                loading="lazy"
                 style={{
                   width: "100%",
                   height: "auto",

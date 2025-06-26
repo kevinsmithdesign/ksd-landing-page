@@ -1,28 +1,11 @@
 import React from "react";
-import {
-  Button,
-  Container,
-  Grid,
-  Card,
-  Typography,
-  Box,
-  Stack,
-  Badge,
-  Chip,
-  Tooltip,
-  useTheme,
-} from "@mui/material";
-import SprintView from "../assets/images/SprintView.svg";
-import CreditFlow from "../assets/images/CreditFlow.svg";
-// import FoodApp from "../assets/images/FoodApp.svg";
-// import RealEstateApp from "../assets/images/RealEstateApp.svg";
+import { Button, Grid, Card, Typography, Box, Stack } from "@mui/material";
 
 import PromptRank from "../assets/images/PromptRank.svg";
 import WLDesignSystem from "../assets/images/WLDesignSystem.svg";
 
 const DevelopmentWork = () => {
   const cardStyles = {
-    // background: themeColor.palette.mode === "light" ? "#fff" : "#111",
     padding: "40px",
     borderRadius: "16px",
     height: "100%",
@@ -36,7 +19,6 @@ const DevelopmentWork = () => {
             <Box
               sx={{
                 width: "100%",
-                // mb: 2,
               }}
             >
               <img
@@ -64,7 +46,6 @@ const DevelopmentWork = () => {
               <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
               <Typography
                 variant="h3"
-                // sx={{ fontSize: "36px" }}
                 color="text.primary"
                 fontWeight="bold"
                 mb={2}
@@ -100,7 +81,6 @@ const DevelopmentWork = () => {
             <Box
               sx={{
                 width: "100%",
-                // mb: 2,
               }}
             >
               <img

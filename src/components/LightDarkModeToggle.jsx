@@ -1,4 +1,3 @@
-// LightDarkModeToggle.js - Just replace your toggle component with this
 import React, { useState } from "react";
 import { Typography, Stack, Box } from "@mui/material";
 import MoonIcon from "../assets/images/MoonIcon";

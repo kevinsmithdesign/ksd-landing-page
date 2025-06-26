@@ -9,12 +9,8 @@ import {
   Typography,
   Box,
   Stack,
-  Badge,
-  Chip,
-  Tooltip,
   useTheme,
 } from "@mui/material";
-import theme from "./theme";
 import { createCustomTheme } from "./theme";
 
 import Uiuxmockup from "./assets/images/Uiuxmockup";
@@ -45,16 +41,12 @@ import GitHub from "./assets/images/GitHub";
 import CodePen from "./assets/images/CodePen";
 import SocialIconBox from "./components/SocialIconButton";
 import LightDarkModeToggle from "./components/LightDarkModeToggle";
-import DesignWork from "./components/DesignWork";
-import DevelopmentWork from "./components/DevelopmentWork";
 import DesignWorkWrapper from "./components/DesignWorkWrapper";
 import DevelopmentWorkWrapper from "./components/DevelopmentWorkWrapper";
 
 export default function App() {
   const footerRef = useRef(null);
-  const themeColor = useTheme();
   const cardStyles = {
-    // background: themeColor.palette.mode === "light" ? "#fff" : "#111",
     padding: "40px",
     borderRadius: "16px",
     height: "100%",

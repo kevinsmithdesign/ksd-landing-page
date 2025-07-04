@@ -8,12 +8,20 @@ import {
   Stack,
   Tooltip,
 } from "@mui/material";
+import { useNavigate } from "react-router";
+
 import SprintView from "../assets/images/SprintView.svg";
 import CreditFlow from "../assets/images/CreditFlow.svg";
 import FoodApp from "../assets/images/FoodApp.svg";
 import RealEstateApp from "../assets/images/RealEstateApp.svg";
 
 const DesignWork = () => {
+  const navigate = useNavigate();
+
+  const handleViewCaseStudy = () => {
+    navigate("/sprint-view");
+  };
+
   const cardStyles = {
     padding: "40px",
     borderRadius: "16px",
@@ -67,16 +75,12 @@ const DesignWork = () => {
                 helps teams plan work, track progress, and stay aligned
                 throughout the sprint cycle.
               </Typography>
-              <Tooltip
-                title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
-                placement="bottom-start"
-              >
-                <span>
-                  <Button disabled variant="contained">
-                    View Project
-                  </Button>
-                </span>
-              </Tooltip>
+
+              <Stack flexDirection="row">
+                <Button variant="contained" onClick={handleViewCaseStudy}>
+                  View Case Study
+                </Button>
+              </Stack>
             </Box>
           </Grid>
         </Grid>

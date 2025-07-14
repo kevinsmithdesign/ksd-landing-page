@@ -659,7 +659,7 @@ export default function App() {
                 justifyContent: { xs: "flex-start", sm: "flex-end" },
               }}
             >
-              <Stack>
+              {/* <Stack>
                 <Stack flexDirection="row" gap={0.5}>
                   <Box
                     onClick={() => handleTabClick("Design")}
@@ -708,7 +708,7 @@ export default function App() {
                     Development
                   </Box>
                 </Stack>
-              </Stack>
+              </Stack> */}
             </Grid>
           </Grid>
           <Stack>

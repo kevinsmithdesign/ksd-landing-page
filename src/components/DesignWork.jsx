@@ -77,9 +77,20 @@ const DesignWork = () => {
               </Typography>
 
               <Stack flexDirection="row">
-                <Button variant="contained" onClick={handleViewCaseStudy}>
-                  View Case Study
-                </Button>
+                <Tooltip
+                  title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
+                  placement="bottom-start"
+                >
+                  <span>
+                    <Button
+                      disabled
+                      variant="contained"
+                      onClick={handleViewCaseStudy}
+                    >
+                      Case Study Coming Soon
+                    </Button>
+                  </span>
+                </Tooltip>
               </Stack>
             </Box>
           </Grid>

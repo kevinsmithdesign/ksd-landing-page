@@ -15,6 +15,7 @@ import SprintView from "../assets/images/SprintView.svg";
 import CreditFlow from "../assets/images/CreditFlow.svg";
 import FoodApp from "../assets/images/FoodApp.svg";
 import RealEstateApp from "../assets/images/RealEstateApp.svg";
+import PromptRank from "../assets/images/PromptRankHeroImg.png";
 
 const DesignWork = () => {
   const navigate = useNavigate();
@@ -279,6 +280,68 @@ const DesignWork = () => {
                   </Button>
                 </span>
               </Tooltip>
+            </Box>
+          </Grid>
+        </Grid>
+      </Card>
+      <Card style={cardStyles} sx={{ mb: 1 }}>
+        <Grid container spacing={10}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                width: "100%",
+              }}
+            >
+              <img
+                src={PromptRank}
+                alt="Prompt Rank Model Compairson Page"
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: "12px",
+                }}
+              />
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
+              <Typography
+                variant="h3"
+                color="text.primary"
+                fontWeight="bold"
+                mb={2}
+              >
+                PromptRank
+              </Typography>
+
+              <Typography variant="body1" color="text.secondary" mb={6}>
+                Explore, rank, and share AI prompts while discovering powerful
+                AI tools. Prompt Rank helps users refine AI interactions, learn
+                prompt engineering techniques, and enhance their workflow with
+                curated resources.
+              </Typography>
+
+              <Stack flexDirection="row">
+                <Button
+                  variant="contained"
+                  component="a"
+                  href="https://promptrank.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Site
+                </Button>
+              </Stack>
             </Box>
           </Grid>
         </Grid>

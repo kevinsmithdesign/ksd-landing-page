@@ -7,6 +7,7 @@ import {
   Box,
   Stack,
   Tooltip,
+  useTheme,
 } from "@mui/material";
 import { useNavigate } from "react-router";
 
@@ -17,9 +18,15 @@ import RealEstateApp from "../assets/images/RealEstateApp.svg";
 
 const DesignWork = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const handleViewCaseStudy = () => {
-    navigate("/sprint-view");
+    const baseUrl = window.location.origin;
+    window.open(`${baseUrl}/sprint-view`, "_blank");
+  };
+
+  const handleViewPrototype = () => {
+    window.open("https://sprintview.netlify.app/", "_blank");
   };
 
   const cardStyles = {
@@ -69,28 +76,30 @@ const DesignWork = () => {
                 SprintView
               </Typography>
 
-              <Typography variant="body1" color="text.secondary" mb={6}>
+              <Typography variant="body1" color="text.secondary" mb={4}>
                 A streamlined task and sprint management platform built to
                 support clear team communication and accountability. Sprint View
                 helps teams plan work, track progress, and stay aligned
                 throughout the sprint cycle.
               </Typography>
 
-              <Stack flexDirection="row">
-                <Tooltip
-                  title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
-                  placement="bottom-start"
+              <Stack flexDirection="row" gap={1}>
+                <Button variant="contained" onClick={handleViewCaseStudy}>
+                  View Case Study
+                </Button>
+                <Button
+                  sx={{
+                    background: "#eee",
+                    color: "#000",
+                    "&:hover": {
+                      background: "#ddd",
+                    },
+                  }}
+                  variant="contained"
+                  onClick={handleViewPrototype}
                 >
-                  <span>
-                    <Button
-                      disabled
-                      variant="contained"
-                      onClick={handleViewCaseStudy}
-                    >
-                      Case Study Coming Soon
-                    </Button>
-                  </span>
-                </Tooltip>
+                  View Prototype
+                </Button>
               </Stack>
             </Box>
           </Grid>
@@ -135,7 +144,7 @@ const DesignWork = () => {
               >
                 Credit Flow
               </Typography>
-              <Typography variant="body1" color="text.secondary" mb={6}>
+              <Typography variant="body1" color="text.secondary" mb={4}>
                 A financial wellness platform designed to help users understand,
                 monitor, and improve their credit. CreditFlow offers actionable
                 insights and tools that support smarter financial decisions and
@@ -195,7 +204,7 @@ const DesignWork = () => {
                 Foodie
               </Typography>
 
-              <Typography variant="body1" color="text.secondary" mb={6}>
+              <Typography variant="body1" color="text.secondary" mb={4}>
                 A food delivery app that makes ordering easy, fast, and
                 reliable. Foodie connects users with local restaurants and helps
                 streamline the ordering experience from selection to doorstep
@@ -254,7 +263,7 @@ const DesignWork = () => {
               >
                 Madison Group
               </Typography>
-              <Typography variant="body1" color="text.secondary" mb={6}>
+              <Typography variant="body1" color="text.secondary" mb={4}>
                 A real estate discovery platform that simplifies the home-buying
                 journey. Madison Group lets users explore listings, compare
                 properties, and make confident decisions, all in one seamless

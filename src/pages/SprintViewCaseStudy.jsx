@@ -38,6 +38,10 @@ const SprintViewCaseStudy = () => {
     setTabValue(newValue);
   };
 
+  const handleViewPrototype = () => {
+    window.open("https://sprintview.netlify.app/", "_blank");
+  };
+
   return (
     <>
       <Box
@@ -75,6 +79,7 @@ const SprintViewCaseStudy = () => {
                   boxShadow: "none",
                 },
               }}
+              onClick={handleViewPrototype}
             >
               View Prototype
             </Button>
@@ -164,13 +169,13 @@ const SprintViewCaseStudy = () => {
                 </Typography>
               </Box>
               <Typography variant="h4" pb={2} fontWeight={600}>
-                Six Teams Revealed Why Sprint Management Teams Need AI
+                Four Teams Revealed Why Sprint Management Teams Need AI
                 Intelligence
               </Typography>
             </Grid>
             <Grid size={{ md: 6 }}>
               <Typography variant="body2" mb={2}>
-                I shadowed 6 teams across 3 companies during their actual sprint
+                I shadowed 4 teams across 2 companies during their actual sprint
                 ceremonies and timed their context switches. The average team
                 lost 50 minutes per day just navigating between tools and
                 manually managing sprint overhead. Scrum Masters were playing
@@ -901,26 +906,28 @@ const SprintViewCaseStudy = () => {
                   p: "12px 24px",
                   background: "#4971F4",
                 }}
+                onClick={handleViewPrototype}
               >
                 View Prototype
               </Button>
             </Grid>
             <Grid size={{ md: 6 }}>
               <Typography variant="body2" mb={2}>
-                The unified platform delivered 260% ROI within 8 months,
-                validated a $220M addressable market opportunity for integrated
-                sprint collaboration, and positioned the company beyond
-                traditional project management into intelligent team
-                collaboration. Teams using SprintView reported higher sprint
+                My hypothesis is that the unified platform would deliver 260%
+                ROI within 8 months, unlock a $220M addressable market
+                opportunity for integrated sprint collaboration, and position
+                the company beyond traditional project management into
+                intelligent team collaboration. Based on user interviews, I
+                expect teams using SprintView to report higher sprint
                 satisfaction and more predictable delivery compared to
                 fragmented toolchains.
               </Typography>
               <Typography variant="body2" mb={6}>
-                The combination of platform consolidation and ambient
-                intelligence created a defensible competitive
+                The envisioned combination of platform consolidation and ambient
+                intelligence would create a defensible competitive
                 advantage—competitors could copy individual features, but
                 replicating the cross-platform intelligence and unified workflow
-                proved much harder.
+                would require significant investment and expertise.
               </Typography>
             </Grid>
           </Grid>

@@ -9,6 +9,7 @@ import {
   Tab,
   Tabs,
   Stack,
+  Skeleton,
   useTheme,
 } from "@mui/material";
 import "../App.css";
@@ -40,6 +41,12 @@ const SprintViewCaseStudy = () => {
 
   const handleViewPrototype = () => {
     window.open("https://sprintview.netlify.app/", "_blank");
+  };
+
+  const [heroImageLoaded, setHeroImageLoaded] = useState(false);
+
+  const handleHeroImageLoad = () => {
+    setHeroImageLoaded(true);
   };
 
   return (
@@ -84,7 +91,7 @@ const SprintViewCaseStudy = () => {
               View Prototype
             </Button>
           </Box>
-          <Box sx={{ textAlign: "center" }}>
+          {/* <Box sx={{ textAlign: "center" }}>
             <img
               src={SprintViewCaseStudyHeroImg}
               alt="SprintView Hero Section Image"
@@ -92,6 +99,38 @@ const SprintViewCaseStudy = () => {
                 width: "100%",
                 height: "auto",
                 margin: "auto",
+              }}
+            />
+          </Box> */}
+          <Box sx={{ textAlign: "center", position: "relative" }}>
+            <Skeleton
+              variant="rectangular"
+              sx={{
+                width: "100%",
+                height: "600px", // Adjust this to match your expected image height
+                borderRadius: "12px",
+                background: "transparent",
+                // bgcolor: "rgba(255, 255, 255, 0.2)",
+                position: heroImageLoaded ? "absolute" : "static",
+                top: 0,
+                left: 0,
+                opacity: heroImageLoaded ? 0 : 1,
+                transition: "opacity 0.5s ease-in-out",
+                zIndex: heroImageLoaded ? 0 : 1,
+              }}
+            />
+            <img
+              src={SprintViewCaseStudyHeroImg}
+              alt="SprintView Hero Section Image"
+              onLoad={handleHeroImageLoad}
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "auto",
+                opacity: heroImageLoaded ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+                position: "relative",
+                zIndex: 2,
               }}
             />
           </Box>

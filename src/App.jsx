@@ -83,7 +83,7 @@ export default function App() {
       <CssBaseline />
       <div className="App">
         <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 3, pr: 3 }}>
-          <LightDarkModeToggle onThemeChange={handleThemeChange} />
+          {/* <LightDarkModeToggle onThemeChange={handleThemeChange} /> */}
         </Box>
 
         <Container sx={{ py: 12, textAlign: "center" }}>

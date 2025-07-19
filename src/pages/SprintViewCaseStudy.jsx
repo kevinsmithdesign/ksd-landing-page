@@ -794,19 +794,21 @@ const SprintViewCaseStudy = () => {
             </Grid>
             <Grid size={{ md: 6 }}>
               <Typography variant="body2" mb={2}>
-                The unified platform improved how teams worked: 30% reduction in
-                sprint overhead, 18 hours monthly saved per team, 45% reduction
-                in context switching, and teams identifying blockers an average
-                of 1.5 days earlier. Teams reported feeling more connected and
-                informed, with sprint health becoming visible rather than
-                mysterious.
+                SprintView was designed to unify scattered sprint tools into a
+                single platform. Based on user interviews and workflow analysis,
+                the projected impact included a 30% reduction in sprint
+                overhead, 18 hours saved per team per month, a 45% decrease in
+                context switching, and earlier identification of blockers. Users
+                described the experience as more streamlined, with sprint health
+                becoming easier to monitor and manage.
               </Typography>
               <Typography variant="body2" mb={6}>
-                The AI's cross-platform insights helped teams catch patterns
-                they'd never seen before—predicting sprint risks three days
-                earlier, suggesting capacity adjustments based on historical
-                performance, and automatically flagging potential blockers
-                before they impacted delivery timelines.
+                The AI-driven insights were prototyped to surface patterns teams
+                typically missed—such as predicting sprint risks days in
+                advance, recommending capacity tweaks based on historical
+                trends, and flagging blockers before they slowed delivery. These
+                concepts helped validate the value of ambient intelligence in
+                team collaboration.
               </Typography>
             </Grid>
           </Grid>

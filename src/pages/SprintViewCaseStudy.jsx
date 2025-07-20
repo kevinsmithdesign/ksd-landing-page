@@ -65,7 +65,7 @@ const SprintViewCaseStudy = () => {
               fontWeight={600}
               lineHeight={"3.8rem"}
             >
-              SprintView Saves Teams 14 Hours Every Month by Unifying Sprint
+              SprintView Saves Teams 25 Hours Every Month by Unifying Sprint
               Collaboration
             </Typography>
             <Button
@@ -216,7 +216,7 @@ const SprintViewCaseStudy = () => {
               <Typography variant="body2" mb={2}>
                 I shadowed 4 teams across 2 companies during their actual sprint
                 ceremonies and timed their context switches. The average team
-                lost 50 minutes per day just navigating between tools and
+                lost 65 minutes per day just navigating between tools and
                 manually managing sprint overhead. Scrum Masters were playing
                 detective, manually piecing together sprint health from
                 scattered data.
@@ -283,7 +283,7 @@ const SprintViewCaseStudy = () => {
                   </Stack>
                 </Stack>
                 <Typography variant="h3" fontWeight="bold">
-                  50 mins
+                  65 mins
                 </Typography>
                 <Typography color="#8B8E96" variant="body2">
                   Lost daily to manual overhead
@@ -313,7 +313,7 @@ const SprintViewCaseStudy = () => {
                   </Stack>
                 </Stack>
                 <Typography variant="h3" fontWeight="bold">
-                  25%
+                  30%
                 </Typography>
                 <Typography color="#8B8E96" variant="body2">
                   Of every sprint wasted on overhead
@@ -796,8 +796,8 @@ const SprintViewCaseStudy = () => {
               <Typography variant="body2" mb={2}>
                 SprintView was designed to unify scattered sprint tools into a
                 single platform. Based on user interviews and workflow analysis,
-                the projected impact included a 30% reduction in sprint
-                overhead, 18 hours saved per team per month, a 45% decrease in
+                the projected impact included a 39% reduction in sprint
+                overhead, 25 hours saved per team per month, a 45% decrease in
                 context switching, and earlier identification of blockers. Users
                 described the experience as more streamlined, with sprint health
                 becoming easier to monitor and manage.
@@ -838,7 +838,7 @@ const SprintViewCaseStudy = () => {
                   </Stack>
                 </Stack>
                 <Typography variant="h3" fontWeight="bold">
-                  30%
+                  39%
                 </Typography>
                 <Typography color="#8B8E96" variant="body2">
                   Reduction in sprint overhead
@@ -869,7 +869,7 @@ const SprintViewCaseStudy = () => {
                   </Stack>
                 </Stack>
                 <Typography variant="h3" fontWeight="bold">
-                  18 hrs
+                  25 hrs
                 </Typography>
                 <Typography color="#8B8E96" variant="body2">
                   Of every sprint wasted on overhead
@@ -909,7 +909,7 @@ const SprintViewCaseStudy = () => {
           </Grid>
         </Container>
       </Box>
-      <Box sx={{ background: "#fff", pt: 10, pb: 10 }}>
+      {/* <Box sx={{ background: "#fff", pt: 10, pb: 10 }}>
         <Container sx={{ background: "" }}>
           <Grid container spacing={20}>
             <Grid size={{ md: 6 }}>
@@ -952,7 +952,7 @@ const SprintViewCaseStudy = () => {
                 View Prototype
               </Button>
             </Grid>
-            <Grid size={{ md: 6 }}>
+             <Grid size={{ md: 6 }}>
               <Typography variant="body2" mb={2}>
                 My hypothesis is that the unified platform would deliver 260%
                 ROI within 8 months, unlock a $220M addressable market
@@ -970,10 +970,10 @@ const SprintViewCaseStudy = () => {
                 replicating the cross-platform intelligence and unified workflow
                 would require significant investment and expertise.
               </Typography>
-            </Grid>
+            </Grid> 
           </Grid>
         </Container>
-      </Box>
+      </Box> */}
     </>
   );
 };

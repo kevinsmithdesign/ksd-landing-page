@@ -84,7 +84,7 @@ const DesignWork = () => {
                 throughout the sprint cycle.
               </Typography>
 
-              <Stack flexDirection="row" gap={1}>
+              <Stack flexDirection={{ xs: "column", sm: "row" }} gap={1}>
                 <Button variant="contained" onClick={handleViewCaseStudy}>
                   View Case Study
                 </Button>

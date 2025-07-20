@@ -393,9 +393,9 @@ const SprintViewCaseStudy = () => {
                 old paradigm of building better point solutions rather than
                 rethinking the fundamental problem. While they competed on
                 features like better kanban boards or prettier interfaces, teams
-                were still jumping between tools. This validated that our
-                unified platform approach with AI intelligence wasn't just
-                different—it was solving a problem no one else was addressing.
+                were still jumping between tools. This validated that my unified
+                platform approach with AI intelligence wasn't just different—it
+                was solving a problem no one else was addressing.
               </Typography>
             </Grid>
           </Grid>
@@ -686,47 +686,34 @@ const SprintViewCaseStudy = () => {
                   p={0}
                   color="#4971F4"
                 >
-                  SOLUTION
+                  PROTOTYPE
                 </Typography>
               </Box>
               <Typography variant="h4" pb={2} fontWeight={600}>
-                Unified Workspace Where Intelligence Flows Naturally
+                Building and Testing the Unified Platform Concept
               </Typography>
             </Grid>
             <Grid size={{ md: 6 }}>
               <Typography variant="body2" mb={2}>
-                SprintView provides kanban boards with real-time collaboration,
-                integrated video huddles with AI capacity recommendations, team
-                messaging with smart file organization, calendar views that sync
-                work with time, and analytics dashboards with predictive
-                insights. Teams work in one platform while eliminating tool
-                switching chaos.
+                I'm building a working prototype to test whether eliminating
+                tool switching actually solves the problems I observed. Rather
+                than just theorizing about unified workflows, I need to put
+                something real in front of teams and watch how they use it. The
+                prototype brings together the core sprint activities—boards,
+                meetings, chat, scheduling—into one workspace where I can test
+                if intelligence truly emerges from connected data.
               </Typography>
               <Typography variant="body2" mb={6}>
-                The AI layer connects everything—automatically detecting
-                blockers from chat patterns, predicting sprint completion based
-                on velocity trends, suggesting optimal capacity allocation using
-                team history, and surfacing sprint health insights that would
-                otherwise stay hidden until problems became crises.
+                Each week, I'm testing new features with real teams and
+                iterating based on their feedback. The big question isn't
+                whether I can build these features, but whether teams actually
+                change their behavior when the friction disappears. These
+                testing sessions are revealing which assumptions hold true and
+                which need to be rethought as I work toward a solution that
+                genuinely transforms how teams collaborate during sprints.
               </Typography>
             </Grid>
           </Grid>
-
-          {/* 
-          <Grid container spacing={20}>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant="h4" fontWeight="bold">
-                Board Page
-              </Typography>
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant="body2">
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley
-              </Typography>
-            </Grid>
-          </Grid> */}
         </Container>
         <Box sx={{ background: "#B6BAEA" }}>
           <Container>
@@ -770,6 +757,145 @@ const SprintViewCaseStudy = () => {
       </Box>
 
       <Box sx={{ background: "#F5F9FC", pt: 10, pb: 10 }}>
+        <Container sx={{ background: "" }}>
+          <Grid container spacing={20}>
+            <Grid size={{ md: 6 }}>
+              <Box
+                sx={{
+                  mb: 1,
+                }}
+              >
+                <Typography
+                  fontWeight="bold"
+                  variant="body2"
+                  mb={0}
+                  p={0}
+                  color="#4971F4"
+                >
+                  RESULTS COMING SOON
+                </Typography>
+              </Box>
+              <Typography variant="h4" pb={2} fontWeight={600}>
+                Validating Impact Through Real Team Usage
+              </Typography>
+            </Grid>
+            <Grid size={{ md: 6 }}>
+              <Typography variant="body2" mb={2}>
+                Once the prototype testing is complete, I'll have concrete data
+                on whether this unified approach actually delivers the
+                productivity gains teams need. I'm tracking key metrics like
+                time saved per sprint, reduction in context switching, and early
+                blocker detection to validate the original hypothesis that tool
+                fragmentation is costing teams significant overhead.
+              </Typography>
+              <Typography variant="body2" mb={6}>
+                The real test will be seeing teams adopt new workflows naturally
+                and reporting back that their sprints feel more predictable and
+                less chaotic. These findings will determine the next phase of
+                development and provide the evidence needed to scale this
+                solution to more teams facing the same collaboration challenges.
+              </Typography>
+            </Grid>
+          </Grid>
+
+          {/* <Grid container spacing={2}>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Card sx={{ p: 4, boxShadow: "none", borderRadius: "16px" }}>
+                <Stack flexDirection="row" alignItems="center">
+                  <Stack flexGrow={1} sx={{ background: "" }}>
+                    <Typography fontWeight="bold">SPRINT OVERHEAD</Typography>
+                  </Stack>
+                  <Stack>
+                    <Box
+                      sx={{
+                        width: "40px",
+                        height: "40px",
+
+                        background: "#FCD98E",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <BoltIcon />
+                    </Box>
+                  </Stack>
+                </Stack>
+                <Typography variant="h3" fontWeight="bold">
+                  39%
+                </Typography>
+                <Typography color="#8B8E96" variant="body2">
+                  Reduction in sprint overhead
+                </Typography>
+              </Card>
+            </Grid>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Card sx={{ p: 4, boxShadow: "none", borderRadius: "16px" }}>
+                <Stack flexDirection="row" alignItems="center">
+                  <Stack flexGrow={1} sx={{ background: "" }}>
+                    <Typography fontWeight="bold">TIME SAVED</Typography>
+                  </Stack>
+                  <Stack>
+                    <Box
+                      sx={{
+                        width: "40px",
+                        height: "40px",
+                        // background: "#FCD98E",
+                        background: "#77B8A0",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <ClockIcon />
+                    </Box>
+                  </Stack>
+                </Stack>
+                <Typography variant="h3" fontWeight="bold">
+                  25 hrs
+                </Typography>
+                <Typography color="#8B8E96" variant="body2">
+                  Of every sprint wasted on overhead
+                </Typography>
+              </Card>
+            </Grid>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Card sx={{ p: 4, boxShadow: "none", borderRadius: "16px" }}>
+                <Stack flexDirection="row" alignItems="center">
+                  <Stack flexGrow={1} sx={{ background: "" }}>
+                    <Typography fontWeight="bold">CONTEXT SWITCHING</Typography>
+                  </Stack>
+                  <Stack>
+                    <Box
+                      sx={{
+                        width: "40px",
+                        height: "40px",
+                        background: "#B6BAEA",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <ToolSwitchingIcon />
+                    </Box>
+                  </Stack>
+                </Stack>
+                <Typography variant="h3" fontWeight="bold">
+                  45%
+                </Typography>
+                <Typography color="#8B8E96" variant="body2">
+                  Reduction in context switching
+                </Typography>
+              </Card>
+            </Grid>
+          </Grid> */}
+        </Container>
+      </Box>
+
+      {/* <Box sx={{ background: "#F5F9FC", pt: 10, pb: 10 }}>
         <Container sx={{ background: "" }}>
           <Grid container spacing={20}>
             <Grid size={{ md: 6 }}>
@@ -908,7 +1034,7 @@ const SprintViewCaseStudy = () => {
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </Box> */}
       {/* <Box sx={{ background: "#fff", pt: 10, pb: 10 }}>
         <Container sx={{ background: "" }}>
           <Grid container spacing={20}>

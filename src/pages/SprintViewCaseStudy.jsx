@@ -65,8 +65,8 @@ const SprintViewCaseStudy = () => {
               fontWeight={600}
               lineHeight={"3.8rem"}
             >
-              SprintView Saves Teams 25 Hours Every Month by Unifying Sprint
-              Collaboration
+              Testing Whether AI-Enhanced Collaboration Transforms Sprint
+              Productivity
             </Typography>
             <Button
               variant="contained"
@@ -775,9 +775,29 @@ const SprintViewCaseStudy = () => {
                   RESULTS COMING SOON
                 </Typography>
               </Box>
-              <Typography variant="h4" pb={2} fontWeight={600}>
+              <Typography variant="h4" pb={4} fontWeight={600}>
                 Validating Impact Through Real Team Usage
               </Typography>
+              <Button
+                variant="contained"
+                sx={{
+                  boxShadow: "none",
+                  "&:hover": {
+                    boxShadow: "none",
+                    background: "#ddd",
+                    color: "#000",
+                  },
+                  borderRadius: "32px",
+                  textTransform: "none",
+                  fontWeight: "bold",
+                  fontSize: "14px",
+                  p: "12px 24px",
+                  background: "#4971F4",
+                }}
+                onClick={handleViewPrototype}
+              >
+                View Prototype
+              </Button>
             </Grid>
             <Grid size={{ md: 6 }}>
               <Typography variant="body2" mb={2}>

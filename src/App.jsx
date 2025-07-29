@@ -517,8 +517,9 @@ export default function App() {
                 <Box
                   sx={{
                     width: "100%",
-                    maxWidth: "270px",
+                    maxWidth: "320px",
                     mb: 2,
+
                     "& svg": {
                       width: "100%",
                       height: "auto",
@@ -526,7 +527,7 @@ export default function App() {
                     },
                   }}
                 >
-                  <DesignPrototype />
+                  <Uiuxmockup />
                 </Box>
 
                 <Typography
@@ -547,30 +548,43 @@ export default function App() {
               <Card style={cardStyles}>
                 <Box
                   sx={{
-                    width: "100%",
-                    maxWidth: "470px",
-                    mb: 2,
-                    "& svg": {
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                    },
+                    display: "flex",
+                    flexDirection: "column",
+                    just: "flex-end",
                   }}
                 >
-                  <DevelopmentImplementation />
+                  <Box
+                    sx={{
+                      width: "100%",
+                      maxWidth: "460px",
+                      display: "flex",
+                      // height: "100px",
+                      mt: 7,
+                      mb: 2,
+                      "& svg": {
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                      },
+                    }}
+                  >
+                    <FrontEnd />
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="h4"
+                      color="text.primary"
+                      fontWeight="bold"
+                      mb={1}
+                    >
+                      Development & Implementation
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                      Building responsive, accessible experiences with clean
+                      code that performs across all devices.
+                    </Typography>
+                  </Box>
                 </Box>
-                <Typography
-                  variant="h4"
-                  color="text.primary"
-                  fontWeight="bold"
-                  mb={1}
-                >
-                  Development & Implementation
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  Building responsive, accessible experiences with clean code
-                  that performs across all devices.
-                </Typography>
               </Card>
             </Grid>
           </Grid>

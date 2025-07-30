@@ -139,7 +139,7 @@ const SprintViewCaseStudy = () => {
       {/* Problem Statement Starts */}
       <Box sx={{ background: "#fff", pt: 10, pb: 10 }}>
         <Container sx={{ background: "" }}>
-          <Grid container spacing={20}>
+          <Grid container spacing={{ xs: 1, md: 20 }}>
             <Grid size={{ md: 6 }}>
               <Box
                 sx={{
@@ -190,7 +190,7 @@ const SprintViewCaseStudy = () => {
       {/* Research Starts */}
       <Box sx={{ background: "#F5F9FC", pt: 10, pb: 10 }}>
         <Container sx={{ background: "" }}>
-          <Grid container spacing={20}>
+          <Grid container spacing={{ xs: 1, md: 20 }}>
             <Grid size={{ md: 6 }}>
               <Box
                 sx={{
@@ -357,7 +357,7 @@ const SprintViewCaseStudy = () => {
 
       <Box sx={{ background: "#F5F9FC", pb: 10 }}>
         <Container sx={{ background: "" }}>
-          <Grid container spacing={20}>
+          <Grid container spacing={{ xs: 1, md: 20 }}>
             <Grid size={{ md: 6 }}>
               <Box
                 sx={{
@@ -374,7 +374,7 @@ const SprintViewCaseStudy = () => {
                   COMPETITIVE ANALYSIS
                 </Typography>
               </Box>
-              <Typography variant="h4" pb={4} fontWeight={600}>
+              <Typography variant="h4" pb={2} fontWeight={600}>
                 Competitors Offer Point Solutions, Not Unified Platforms
               </Typography>
             </Grid>
@@ -446,7 +446,7 @@ const SprintViewCaseStudy = () => {
       {/* STRATEGY Starts */}
       <Box sx={{ background: "#fff", pb: 10, pt: 10 }}>
         <Container>
-          <Grid container spacing={20}>
+          <Grid container spacing={{ xs: 1, md: 20 }}>
             <Grid size={{ md: 6 }}>
               <Box
                 sx={{
@@ -463,7 +463,7 @@ const SprintViewCaseStudy = () => {
                   STRATEGY
                 </Typography>
               </Box>
-              <Typography variant="h4" pb={4} fontWeight={600}>
+              <Typography variant="h4" pb={2} fontWeight={600}>
                 One Platform with Intelligence Everywhere
               </Typography>
             </Grid>
@@ -672,7 +672,7 @@ const SprintViewCaseStudy = () => {
       {/*  Solution Starts */}
       <Box sx={{ background: "#fff" }}>
         <Container sx={{ background: "" }}>
-          <Grid container spacing={20}>
+          <Grid container spacing={{ xs: 1, md: 20 }}>
             <Grid size={{ md: 6 }}>
               <Box
                 sx={{
@@ -758,7 +758,7 @@ const SprintViewCaseStudy = () => {
 
       <Box sx={{ background: "#F5F9FC", pt: 10, pb: 10 }}>
         <Container sx={{ background: "" }}>
-          <Grid container spacing={20}>
+          <Grid container spacing={{ xs: 1, md: 20 }}>
             <Grid size={{ md: 6 }}>
               <Box
                 sx={{

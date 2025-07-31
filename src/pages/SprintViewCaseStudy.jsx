@@ -59,11 +59,12 @@ const SprintViewCaseStudy = () => {
         <Container>
           <Box sx={{ textAlign: "center", maxWidth: "1100px", mx: "auto" }}>
             <Typography
-              variant="h3"
+              variant="h1"
               pt={16}
               pb={3}
               fontWeight={600}
-              lineHeight={"3.8rem"}
+              lineHeight={"140%"}
+              sx={{ fontSize: { xs: "2rem", md: "3rem" } }}
             >
               Testing Whether AI-Enhanced Collaboration Transforms Sprint
               Productivity
@@ -793,6 +794,7 @@ const SprintViewCaseStudy = () => {
                   fontSize: "14px",
                   p: "12px 24px",
                   background: "#4971F4",
+                  mb: 2,
                 }}
                 onClick={handleViewPrototype}
               >

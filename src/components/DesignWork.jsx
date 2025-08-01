@@ -151,16 +151,18 @@ const DesignWork = () => {
                 insights and tools that support smarter financial decisions and
                 long-term growth.
               </Typography>
-              <Tooltip
+              {/* <Tooltip
                 title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
                 placement="bottom-start"
               >
-                <span>
-                  <Button disabled variant="contained">
-                    View Project
-                  </Button>
-                </span>
-              </Tooltip>
+                <span> */}
+              <Stack flexDirection="row">
+                <Button disabled variant="contained">
+                  Coming soon
+                </Button>
+              </Stack>
+              {/* </span>
+              </Tooltip> */}
             </Box>
           </Grid>
         </Grid>
@@ -211,16 +213,18 @@ const DesignWork = () => {
                 streamline the ordering experience from selection to doorstep
                 delivery.
               </Typography>
-              <Tooltip
+              {/* <Tooltip
                 title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
                 placement="bottom-start"
               >
-                <span>
-                  <Button disabled variant="contained">
-                    View Project
-                  </Button>
-                </span>
-              </Tooltip>
+                <span> */}
+              <Stack flexDirection="row">
+                <Button disabled variant="contained">
+                  Coming soon
+                </Button>
+              </Stack>
+              {/* </span>
+              </Tooltip> */}
             </Box>
           </Grid>
         </Grid>
@@ -270,16 +274,18 @@ const DesignWork = () => {
                 properties, and make confident decisions, all in one seamless
                 experience.
               </Typography>
-              <Tooltip
+              {/* <Tooltip
                 title="I'm happy to walk through projects over a call. Email info@kevinsmithdesign.com to schedule."
                 placement="bottom-start"
               >
-                <span>
-                  <Button disabled variant="contained">
-                    View Project
-                  </Button>
-                </span>
-              </Tooltip>
+                <span> */}
+              <Stack flexDirection="row">
+                <Button disabled variant="contained">
+                  Coming soon
+                </Button>
+              </Stack>
+              {/* </span>
+              </Tooltip> */}
             </Box>
           </Grid>
         </Grid>
@@ -334,12 +340,13 @@ const DesignWork = () => {
               <Stack flexDirection="row">
                 <Button
                   variant="contained"
-                  component="a"
-                  href="https://promptrank.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  disabled
+                  // component="a"
+                  // href="https://promptrank.io"
+                  // target="_blank"
+                  // rel="noopener noreferrer"
                 >
-                  View Site
+                  Coming soon
                 </Button>
               </Stack>
             </Box>

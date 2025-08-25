@@ -16,6 +16,7 @@ import CreditFlow from "../assets/images/CreditFlow.svg";
 import FoodApp from "../assets/images/FoodApp.svg";
 import RealEstateApp from "../assets/images/RealEstateApp.svg";
 import PromptRank from "../assets/images/PromptRankHeroImg.png";
+import DesignSystemImg from "../assets/images/DesignSystemImg.png";
 
 const DesignWork = () => {
   const navigate = useNavigate();
@@ -34,6 +35,11 @@ const DesignWork = () => {
     padding: "40px",
     borderRadius: "16px",
     height: "100%",
+  };
+
+  const handleViewTheFold = () => {
+    const baseUrl = window.location.origin;
+    window.open(`${baseUrl}/ds`, "_blank");
   };
 
   return (
@@ -100,6 +106,137 @@ const DesignWork = () => {
                   onClick={handleViewPrototype}
                 >
                   View Prototype
+                </Button>
+              </Stack>
+            </Box>
+          </Grid>
+        </Grid>
+      </Card>
+      <Card style={cardStyles} sx={{ mb: 1 }}>
+        <Grid container spacing={10}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                width: "100%",
+              }}
+            >
+              <img
+                src={DesignSystemImg}
+                alt="Sprint View"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: "12px",
+                }}
+              />
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
+              <Typography
+                variant="h3"
+                color="text.primary"
+                fontWeight="bold"
+                mb={2}
+              >
+                The Fold Design System
+              </Typography>
+
+              <Typography variant="body1" color="text.secondary" mb={4}>
+                A unified multi-brand design system built to balance consistency
+                and flexibility. Newfold’s system standardizes foundations while
+                allowing each brand to preserve its unique identity,
+                accelerating delivery and reducing design debt across the
+                portfolio.
+              </Typography>
+
+              <Stack flexDirection={{ xs: "column", sm: "row" }} gap={1}>
+                <Button variant="contained" onClick={handleViewTheFold}>
+                  View Case Study
+                </Button>
+                {/* <Button
+                  sx={{
+                    background: "#eee",
+                    color: "#000",
+                    "&:hover": {
+                      background: "#ddd",
+                    },
+                  }}
+                  variant="contained"
+                  onClick={handleViewPrototype}
+                >
+                  View Prototype
+                </Button> */}
+              </Stack>
+            </Box>
+          </Grid>
+        </Grid>
+      </Card>
+      <Card style={cardStyles} sx={{ mb: 1 }}>
+        <Grid container spacing={10}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                width: "100%",
+              }}
+            >
+              <img
+                src={PromptRank}
+                alt="Prompt Rank Model Compairson Page"
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: "12px",
+                }}
+              />
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
+              <Typography
+                variant="h3"
+                color="text.primary"
+                fontWeight="bold"
+                mb={2}
+              >
+                PromptRank
+              </Typography>
+
+              <Typography variant="body1" color="text.secondary" mb={6}>
+                Explore, rank, and share AI prompts while discovering powerful
+                AI tools. Prompt Rank helps users refine AI interactions, learn
+                prompt engineering techniques, and enhance their workflow with
+                curated resources.
+              </Typography>
+
+              <Stack flexDirection="row">
+                <Button
+                  variant="contained"
+                  component="a"
+                  href="https://promptrank.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Site
                 </Button>
               </Stack>
             </Box>
@@ -286,69 +423,6 @@ const DesignWork = () => {
               </Stack>
               {/* </span>
               </Tooltip> */}
-            </Box>
-          </Grid>
-        </Grid>
-      </Card>
-      <Card style={cardStyles} sx={{ mb: 1 }}>
-        <Grid container spacing={10}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Box
-              sx={{
-                width: "100%",
-              }}
-            >
-              <img
-                src={PromptRank}
-                alt="Prompt Rank Model Compairson Page"
-                loading="lazy"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  borderRadius: "12px",
-                }}
-              />
-            </Box>
-          </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                height: "100%",
-              }}
-            >
-              <Stack flexDirection="row" mb={1} gap={0.5}></Stack>
-              <Typography
-                variant="h3"
-                color="text.primary"
-                fontWeight="bold"
-                mb={2}
-              >
-                PromptRank
-              </Typography>
-
-              <Typography variant="body1" color="text.secondary" mb={6}>
-                Explore, rank, and share AI prompts while discovering powerful
-                AI tools. Prompt Rank helps users refine AI interactions, learn
-                prompt engineering techniques, and enhance their workflow with
-                curated resources.
-              </Typography>
-
-              <Stack flexDirection="row">
-                <Button
-                  variant="contained"
-                  disabled
-                  // component="a"
-                  // href="https://promptrank.io"
-                  // target="_blank"
-                  // rel="noopener noreferrer"
-                >
-                  Coming soon
-                </Button>
-              </Stack>
             </Box>
           </Grid>
         </Grid>

@@ -207,7 +207,7 @@ const MultiBrandDesignSystem = () => {
 
       <Stack sx={{ mb: 4 }}>
         <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={0.5}>
-          GOALS & RESEARCH
+          GOALS & APPROACH
         </Typography>
         <Typography variant="h4" fontWeight="bold" mb={2}>
           Design Once, Brand Many

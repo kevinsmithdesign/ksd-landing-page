@@ -27,8 +27,17 @@ const DesignWork = () => {
     window.open(`${baseUrl}/sprint-view`, "_blank");
   };
 
+  const handleViewPromptRankCaseStudy = () => {
+    const baseUrl = window.location.origin;
+    window.open(`${baseUrl}/prompt-rank`, "_blank");
+  };
+
   const handleViewPrototype = () => {
     window.open("https://sprintview.netlify.app/", "_blank");
+  };
+
+  const handleViewDs = () => {
+    window.open("https://multi-brand-design-system.netlify.app/", "_blank");
   };
 
   const cardStyles = {
@@ -163,7 +172,7 @@ const DesignWork = () => {
                 <Button variant="contained" onClick={handleViewTheFold}>
                   View Case Study
                 </Button>
-                {/* <Button
+                <Button
                   sx={{
                     background: "#eee",
                     color: "#000",
@@ -172,10 +181,10 @@ const DesignWork = () => {
                     },
                   }}
                   variant="contained"
-                  onClick={handleViewPrototype}
+                  onClick={handleViewDs}
                 >
                   View Prototype
-                </Button> */}
+                </Button>
               </Stack>
             </Box>
           </Grid>
@@ -228,8 +237,21 @@ const DesignWork = () => {
                 curated resources.
               </Typography>
 
-              <Stack flexDirection="row">
+              <Stack flexDirection={{ xs: "column", sm: "row" }} gap={1}>
                 <Button
+                  variant="contained"
+                  onClick={handleViewPromptRankCaseStudy}
+                >
+                  View Case Study
+                </Button>
+                <Button
+                  sx={{
+                    background: "#eee",
+                    color: "#000",
+                    "&:hover": {
+                      background: "#ddd",
+                    },
+                  }}
                   variant="contained"
                   component="a"
                   href="https://promptrank.io"

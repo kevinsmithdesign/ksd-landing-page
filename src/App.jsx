@@ -43,6 +43,7 @@ import SocialIconBox from "./components/SocialIconButton";
 import LightDarkModeToggle from "./components/LightDarkModeToggle";
 import DesignWorkWrapper from "./components/DesignWorkWrapper";
 import DevelopmentWorkWrapper from "./components/DevelopmentWorkWrapper";
+import FaqAccordion from "./components/FaqAccordion";
 
 export default function App() {
   const footerRef = useRef(null);
@@ -664,71 +665,27 @@ export default function App() {
                 WORK
               </Typography>
             </Grid>
-            <Grid
-              size={{ xs: 12, sm: 6 }}
-              sx={{
-                pb: 2,
-                display: "flex",
-                alignItems: { xs: "flex-start", sm: "flex-end" },
-                justifyContent: { xs: "flex-start", sm: "flex-end" },
-              }}
-            >
-              {/* <Stack>
-                <Stack flexDirection="row" gap={0.5}>
-                  <Box
-                    onClick={() => handleTabClick("Design")}
-                    sx={{
-                      padding: "12px 24px",
-                      background:
-                        activeTab === "Design"
-                          ? theme.palette.primary.main
-                          : "transparent",
-                      borderRadius: "32px",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      transition: "background-color 0.2s ease",
-                      color: getTextColor("Design"),
-                      "&:hover": {
-                        background:
-                          activeTab === "Design"
-                            ? theme.palette.primary.main
-                            : theme.palette.action.hover,
-                      },
-                    }}
-                  >
-                    Design
-                  </Box>
-                  <Box
-                    onClick={() => handleTabClick("Development")}
-                    sx={{
-                      padding: "12px 24px",
-                      background:
-                        activeTab === "Development"
-                          ? theme.palette.primary.main
-                          : "transparent",
-                      borderRadius: "32px",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      color: getTextColor("Development"),
-                      transition: "background-color 0.2s ease",
-                      "&:hover": {
-                        background:
-                          activeTab === "Development"
-                            ? theme.palette.primary.main
-                            : theme.palette.action.hover,
-                      },
-                    }}
-                  >
-                    Development
-                  </Box>
-                </Stack>
-              </Stack> */}
-            </Grid>
           </Grid>
           <Stack>
             {activeTab === "Design" && <DesignWorkWrapper />}
             {activeTab === "Development" && <DevelopmentWorkWrapper />}
           </Stack>
+        </Container>
+        <Container sx={{ my: 20 }}>
+          <Typography
+            variant="h1"
+            color="text.primary"
+            fontSize={{ xs: "60px", sm: "80px" }}
+            mb={2}
+          >
+            FAQ
+          </Typography>
+          {/* <Card style={cardStyles}>
+            <Typography sx={{ fontSize: "22px", fontWeight: "bold" }}>
+              Do you prefer design or development?
+            </Typography>
+          </Card> */}
+          <FaqAccordion />
         </Container>
       </div>
       <footer ref={footerRef}>

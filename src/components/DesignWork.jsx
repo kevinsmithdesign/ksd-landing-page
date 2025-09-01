@@ -238,20 +238,20 @@ const DesignWork = () => {
               </Typography>
 
               <Stack flexDirection={{ xs: "column", sm: "row" }} gap={1}>
-                <Button
+                {/* <Button
                   variant="contained"
                   onClick={handleViewPromptRankCaseStudy}
                 >
                   View Case Study
-                </Button>
+                </Button> */}
                 <Button
-                  sx={{
-                    background: "#eee",
-                    color: "#000",
-                    "&:hover": {
-                      background: "#ddd",
-                    },
-                  }}
+                  // sx={{
+                  //   background: "#eee",
+                  //   color: "#000",
+                  //   "&:hover": {
+                  //     background: "#ddd",
+                  //   },
+                  // }}
                   variant="contained"
                   component="a"
                   href="https://promptrank.io"

@@ -270,14 +270,50 @@ const MultiBrandDesignSystem = () => {
           codebase could generate multiple brand expressions without
           duplication.
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" mb={2}>
           We documented clear usage guidelines and paired every component with
           accessibility best practices. This ensured consistency not just in
           look and feel, but in how teams implemented them across the portfolio.
         </Typography>
+        <Stack flexDirection="row" gap={1}>
+          <Button
+            variant="outlined"
+            component="a"
+            href="https://www.figma.com/design/lyu0G92pFLKCskfouQSmt1/MultiBrandDesignSystem?node-id=0-1&t=iVTQ3cagXTiWRg4G-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              boxShadow: "none",
+              padding: "12px 24px",
+              borderRadius: "8px",
+              fontWeight: "bold",
+              textTransform: "capitalize",
+            }}
+          >
+            View Figma
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() =>
+              window.open(
+                "https://multi-brand-design-system.netlify.app/",
+                "_blank"
+              )
+            }
+            sx={{
+              boxShadow: "none",
+              padding: "12px 24px",
+              borderRadius: "8px",
+              fontWeight: "bold",
+              textTransform: "capitalize",
+            }}
+          >
+            View Prototype
+          </Button>
+        </Stack>
       </Stack>
 
-      <Stack mb={4}>
+      {/* <Stack mb={4}>
         <Card
           sx={{
             background: "#E9EDF0",
@@ -297,7 +333,7 @@ const MultiBrandDesignSystem = () => {
             }}
           />
         </Card>
-      </Stack>
+      </Stack> */}
 
       <Stack sx={{ mb: 4 }}>
         <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={0.5}>
@@ -479,7 +515,7 @@ const MultiBrandDesignSystem = () => {
         </Grid>
       </Grid>
 
-      <Stack sx={{ mb: 4 }}>
+      {/* <Stack sx={{ mb: 4 }}>
         <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={0.5}>
           REFLECTION
         </Typography>
@@ -497,7 +533,7 @@ const MultiBrandDesignSystem = () => {
           In the end, dozens of voices now speak through one system: unified,
           flexible, and ready to grow.
         </Typography>
-      </Stack>
+      </Stack> */}
     </Container>
   );
 };

@@ -94,7 +94,7 @@ const MultiBrandDesignSystem = () => {
             >
               <Box>
                 <Typography variant="h3" fontWeight="bold">
-                  15+
+                  12+
                 </Typography>
                 <Typography fontWeight="500">Brands Unified</Typography>
               </Box>
@@ -158,15 +158,18 @@ const MultiBrandDesignSystem = () => {
             Dozens of Brands, Dozens of Design Languages
           </Typography>
           <Typography variant="body2" mb={2}>
-            Newfold Digital is the parent company behind a large portfolio of
-            web service brands — Bluehost, HostGator, Network Solutions,
-            Web.com, Domain.com, Yoast SEO, and many others. This collection of
-            brands exists because of years of mergers and acquisitions. Instead
-            of building one brand from the ground up, Newfold grew by bringing
-            multiple established players together under one umbrella. While this
-            strategy created market reach and brand recognition across different
-            customer segments, it also introduced significant design and
-            technical complexity.
+            <b>Newfold Digital</b> is the parent company behind a large
+            portfolio of web service brands — 
+            <b>
+              Bluehost, HostGator, Network Solutions, Web.com, Domain.com, Yoast
+              SEO
+            </b>
+            , and many others. This collection of brands exists because of years
+            of mergers and acquisitions. Instead of building one brand from the
+            ground up, Newfold grew by bringing multiple established players
+            together under one umbrella. While this strategy created market
+            reach and brand recognition across different customer segments, it
+            also introduced significant design and technical complexity.
           </Typography>
           <Typography variant="body2" mb={2}>
             Each brand operated independently for years, developing its own

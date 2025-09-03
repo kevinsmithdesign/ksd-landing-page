@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Container,
@@ -15,34 +15,66 @@ import {
 } from "@mui/material";
 import NewFoldDigitalCaseStudyHeroSection from "../assets/images/NewFoldDigitalCaseStudyHeroSection.png";
 import Hosting1 from "../assets/images/Hosting1.png";
+import Hosting2 from "../assets/images/Hosting2.png";
+import Hosting3 from "../assets/images/Hosting3.png";
+import Hosting4 from "../assets/images/Hosting4.png";
 import NewFoldDigitalBeforeAfter from "../assets/images/NewFoldDigitalBeforeAfter.png";
 import NewFoldButtonAudit from "../assets/images/NewFoldButtonAudit.png";
 import UserResearch from "../assets/images/UserResearch.png";
 import TokenArchitecture from "../assets/images/TokenArchitecture.png";
 
 const MultiBrandDesignSystem = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array of images and corresponding background colors
+  const imageData = [
+    {
+      src: Hosting1,
+      alt: "Bluehost select a plan page",
+      background: "#DEE5FE", // Your current light blue
+    },
+    {
+      src: Hosting2,
+      alt: "Network Solution select a plan page",
+      background: "#D8FFDF", // Light orange for HostGator
+    },
+    {
+      src: Hosting3,
+      alt: "Domain.com select a plan page",
+      background: "#F8E3E3", // Light cyan for Domain.com
+    },
+    {
+      src: Hosting4,
+      alt: "HostGator select a plan page",
+      background: "#DEE9FB", // Light green for Web.com
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageData.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [imageData.length]);
+
+  const currentImage = imageData[currentImageIndex];
+
   return (
     <>
-      <Box sx={{ background: "#DEE5FE" }}>
+      <Box
+        sx={{
+          background: currentImage.background,
+          transition: "background-color 0.5s ease-in-out",
+        }}
+      >
         <Container>
           <Stack
             textAlign="center"
             maxWidth="1000px"
             sx={{ mx: "auto", pt: 6, mb: 4 }}
           >
-            <Box mb={2}>
-              {/* <Chip
-                label="UX Case Study"
-                // variant="outlined"
-
-                sx={{
-                  color: "#000",
-                  borderColor: "#000",
-                  background: "#fff",
-                  fontWeight: "bold",
-                }}
-              /> */}
-            </Box>
+            <Box mb={2}></Box>
             <Typography variant="h2" fontWeight="bold" mb={4} lineHeight="140%">
               Design Once, Brand Everywhere
             </Typography>
@@ -68,7 +100,7 @@ const MultiBrandDesignSystem = () => {
               </Box>
               <Box>
                 <Typography variant="h3" fontWeight="bold">
-                  60%
+                  32%
                 </Typography>
                 <Typography fontWeight="500">Faster Deployment</Typography>
               </Box>
@@ -83,29 +115,25 @@ const MultiBrandDesignSystem = () => {
 
           <Stack mb={4}>
             {/* <img
-          src={NewFoldDigitalCaseStudyHeroSection}
-          alt="Multi Brand Design System Overview"
-          // onLoad={handleHeroImageLoad}
-          style={{
-            width: "100%",
-            height: "auto",
-            margin: "auto",
-            //   opacity: heroImageLoaded ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-            position: "relative",
-            zIndex: 2,
-          }}
-        /> */}
-
-            <img
               src={Hosting1}
               alt="Bluehost select a plan page"
-              // onLoad={handleHeroImageLoad}
               style={{
                 width: "100%",
                 height: "auto",
                 margin: "auto",
-                //   opacity: heroImageLoaded ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+                position: "relative",
+                zIndex: 2,
+                paddingBottom: "48px",
+              }}
+            /> */}
+            <img
+              src={currentImage.src}
+              alt={currentImage.alt}
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "auto",
                 transition: "opacity 0.5s ease-in-out",
                 position: "relative",
                 zIndex: 2,

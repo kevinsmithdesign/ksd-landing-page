@@ -341,7 +341,7 @@ const MultiBrandDesignSystem = () => {
       </Stack>
 
       <Container>
-        <Stack sx={{ mb: 4 }}>
+        <Stack sx={{ mb: 8 }}>
           <Typography
             variant="body2"
             fontWeight="bold"
@@ -374,27 +374,31 @@ const MultiBrandDesignSystem = () => {
             realities of how people built and used products every day.
           </Typography>
         </Stack>
-
-        <Stack mb={8}>
-          <img
-            src={UserResearch}
-            alt="User Interviews with designers, developers, and pm's"
-            // onLoad={handleHeroImageLoad}
-            style={{
-              width: "100%",
-              height: "auto",
-              margin: "auto",
-              //   opacity: heroImageLoaded ? 1 : 0,
-              transition: "opacity 0.5s ease-in-out",
-              position: "relative",
-              zIndex: 2,
-            }}
-          />
-        </Stack>
       </Container>
 
+      <Stack mb={8}>
+        <Box sx={{ background: "#F6F8FA", py: 8 }}>
+          <Container>
+            <img
+              src={UserResearch}
+              alt="User Interviews with designers, developers, and pm's"
+              // onLoad={handleHeroImageLoad}
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "auto",
+                //   opacity: heroImageLoaded ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+                position: "relative",
+                zIndex: 2,
+              }}
+            />
+          </Container>
+        </Box>
+      </Stack>
+
       <Container>
-        <Stack sx={{ mb: 4 }}>
+        <Stack sx={{ mb: 8 }}>
           <Typography
             variant="body2"
             fontWeight="bold"
@@ -430,7 +434,7 @@ const MultiBrandDesignSystem = () => {
         </Stack>
       </Container>
 
-      <Stack mb={4}>
+      <Stack mb={8}>
         {/* <img
           src={TokenArchitecture}
           alt="Multi-brand token archietecture overview"
@@ -445,13 +449,28 @@ const MultiBrandDesignSystem = () => {
             zIndex: 2,
           }}
         /> */}
-        <Box sx={{ background: "#F6F8FA", py: 8, height: "600px" }}>
-          <Container>Updated Token Image here</Container>
+        <Box sx={{ background: "#F6F8FA", py: 16 }}>
+          <Container>
+            <img
+              src={TokenArchitecture}
+              alt="Multi-brand token archietecture overview"
+              // onLoad={handleHeroImageLoad}
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "auto",
+                //   opacity: heroImageLoaded ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+                position: "relative",
+                zIndex: 2,
+              }}
+            />
+          </Container>
         </Box>
       </Stack>
 
       <Container>
-        <Stack sx={{ mb: 4 }}>
+        <Stack sx={{ mb: 8 }}>
           <Typography
             variant="body2"
             fontWeight="bold"

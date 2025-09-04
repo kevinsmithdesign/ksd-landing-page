@@ -107,22 +107,35 @@ const MultiBrandDesignSystem = () => {
             sx={{ mx: "auto", pt: 6, mb: 4 }}
           >
             <Box mb={2}></Box>
-            <Typography variant="h2" fontWeight="bold" mb={3} lineHeight="140%">
+            <Typography
+              sx={{ fontSize: { xs: "40px", sm: "56px" } }}
+              fontWeight="bold"
+              mb={3}
+              lineHeight={{ xs: "126%", md: "140%" }}
+            >
               Design Once, Brand Everywhere
             </Typography>
             <Typography
-              variant="h5"
+              sx={{
+                fontSize: { xs: "18px", sm: "24px" },
+                maxWidth: "730px",
+                mx: "auto",
+              }}
               fontWeight=""
               mb={4}
-              lineHeight="150%"
-              sx={{ maxWidth: "730px", mx: "auto" }}
+              lineHeight="140%"
             >
               Architecting a multi‑brand design system at Newfold Digital to
               unify foundations, preserve brand identity, and accelerate
               delivery across a complex portfolio.
             </Typography>
             <Box
-              sx={{ display: "flex", mx: "auto", maxWidth: "600px", gap: 10 }}
+              sx={{
+                display: { xs: "none", sm: "flex" },
+                mx: "auto",
+                maxWidth: "600px",
+                gap: 10,
+              }}
             >
               <Box>
                 <Typography variant="h3" fontWeight="bold">

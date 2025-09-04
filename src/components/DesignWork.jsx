@@ -230,7 +230,7 @@ const DesignWork = () => {
                 PromptRank
               </Typography>
 
-              <Typography variant="body1" color="text.secondary" mb={6}>
+              <Typography variant="body1" color="text.secondary" mb={4}>
                 Explore, rank, and share AI prompts while discovering powerful
                 AI tools. Prompt Rank helps users refine AI interactions, learn
                 prompt engineering techniques, and enhance their workflow with

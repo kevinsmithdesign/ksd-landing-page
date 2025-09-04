@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Grid,
@@ -16,9 +16,48 @@ import CreditFlow from "../assets/images/CreditFlow.svg";
 import FoodApp from "../assets/images/FoodApp.svg";
 import RealEstateApp from "../assets/images/RealEstateApp.svg";
 import PromptRank from "../assets/images/PromptRankHeroImg.png";
-import DesignSystemImg from "../assets/images/DesignSystemImg.png";
+import BluehostPlan from "../assets/images/BluehostPlan.png";
+import NetworkSolutionPlan from "../assets/images/NetworkSolutionPlan.png";
+import DomainPlan from "../assets/images/DomainPlan.png";
+import HostGatorPlan from "../assets/images/HostGatorPlan.png";
 
 const DesignWork = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array of images and corresponding background colors
+  const imageData = [
+    {
+      src: BluehostPlan,
+      alt: "Bluehost select a plan page",
+      background: "#DEE5FE", // Your current light blue
+    },
+    {
+      src: NetworkSolutionPlan,
+      alt: "Network Solution select a plan page",
+      background: "#D8FFDF", // Light orange for HostGator
+    },
+    {
+      src: DomainPlan,
+      alt: "Domain.com select a plan page",
+      background: "#F8E3E3", // Light cyan for Domain.com
+    },
+    {
+      src: HostGatorPlan,
+      alt: "HostGator select a plan page",
+      background: "#DEE9FB", // Light green for Web.com
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageData.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [imageData.length]);
+
+  const currentImage = imageData[currentImageIndex];
+
   const navigate = useNavigate();
   const theme = useTheme();
 
@@ -130,8 +169,8 @@ const DesignWork = () => {
               }}
             >
               <img
-                src={DesignSystemImg}
-                alt="Sprint View"
+                src={currentImage.src}
+                alt={currentImage.alt}
                 style={{
                   width: "100%",
                   height: "auto",

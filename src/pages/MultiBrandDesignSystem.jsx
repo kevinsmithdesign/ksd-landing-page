@@ -60,6 +60,38 @@ const MultiBrandDesignSystem = () => {
 
   const currentImage = imageData[currentImageIndex];
 
+  const newfoldBrands = [
+    { brand: "Bluehost", link: "https://bluehost.com", borderColor: "#196BDE" },
+    {
+      brand: "HostGator",
+      link: "https://hostgator.com",
+      borderColor: "#3980BF",
+    },
+
+    { brand: "Domain.com", link: "https://domain.com", borderColor: "#E24747" },
+    { brand: "iPage", link: "", borderColor: "#53BB62" },
+    { brand: "Crazydomains.com", link: "", borderColor: "#6EAB2F" },
+    {
+      brand: "Network Solutions",
+      link: "https://networksolutions.com",
+      borderColor: "#007C34",
+    },
+    { brand: "Markmonitor", link: "", borderColor: "#7C39B3" },
+    {
+      brand: "Register.com",
+      link: "https://register.com",
+      borderColor: "#7C39B3",
+    },
+
+    { brand: "Resellerclub", link: "", borderColor: "#7C39B3" },
+    { brand: "Bigrock", link: "", borderColor: "#7C39B3" },
+    { brand: "Sitebuilder.com", link: "", borderColor: "#7C39B3" },
+    { brand: "Yoast", link: "", borderColor: "#7C39B3" },
+    { brand: "BuyDomains.com", link: "", borderColor: "#7C39B3" },
+    { brand: "Web.com", link: "", borderColor: "#7C39B3" },
+    { brand: "Vodien.com", link: "", borderColor: "#7C39B3" },
+  ];
+
   return (
     <>
       <Box
@@ -75,7 +107,7 @@ const MultiBrandDesignSystem = () => {
             sx={{ mx: "auto", pt: 6, mb: 4 }}
           >
             <Box mb={2}></Box>
-            <Typography variant="h2" fontWeight="bold" mb={4} lineHeight="140%">
+            <Typography variant="h2" fontWeight="bold" mb={3} lineHeight="140%">
               Design Once, Brand Everywhere
             </Typography>
             <Typography
@@ -113,7 +145,7 @@ const MultiBrandDesignSystem = () => {
             </Box>
           </Stack>
 
-          <Stack mb={4}>
+          <Stack mb={8}>
             {/* <img
               src={Hosting1}
               alt="Bluehost select a plan page"
@@ -145,7 +177,7 @@ const MultiBrandDesignSystem = () => {
       </Box>
 
       <Container>
-        <Stack sx={{ mb: 4 }}>
+        <Stack sx={{ mb: 8 }}>
           <Typography
             variant="body2"
             fontWeight="bold"
@@ -195,25 +227,52 @@ const MultiBrandDesignSystem = () => {
             foundations while preserving the unique expression of each brand.
           </Typography>
         </Stack>
+      </Container>
+      <Box sx={{ background: "#F6F8FA", py: 8 }}>
+        <Container>
+          <Typography variant="h4" fontWeight="bold" mb={2}>
+            Brands
+          </Typography>
+          <Grid container spacing={1}>
+            {newfoldBrands.map(({ brand, link, borderColor }) => (
+              <Grid size={{ md: 4 }}>
+                <Card
+                  sx={{
+                    p: 4,
+                    boxShadow: "none",
+                    borderRadius: "8px",
+                    // borderLeft: `8px solid ${borderColor}`,
+                  }}
+                >
+                  <Typography variant="h6" fontWeight="bold">
+                    {brand}
+                  </Typography>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
 
-        <Stack mb={4}>
-          <img
-            src={NewFoldDigitalBeforeAfter}
-            alt="NewFold Before and After Comparison Chart"
-            // onLoad={handleHeroImageLoad}
-            style={{
-              width: "100%",
-              height: "auto",
-              margin: "auto",
-              //   opacity: heroImageLoaded ? 1 : 0,
-              transition: "opacity 0.5s ease-in-out",
-              position: "relative",
-              zIndex: 2,
-            }}
-          />
-        </Stack>
+      {/* <Stack mb={4}>
+        <img
+          src={NewFoldDigitalBeforeAfter}
+          alt="NewFold Before and After Comparison Chart"
+          // onLoad={handleHeroImageLoad}
+          style={{
+            width: "100%",
+            height: "auto",
+            margin: "auto",
+            //   opacity: heroImageLoaded ? 1 : 0,
+            transition: "opacity 0.5s ease-in-out",
+            position: "relative",
+            zIndex: 2,
+          }}
+        />
+      </Stack> */}
 
-        <Stack sx={{ mb: 4 }}>
+      <Container>
+        <Stack sx={{ py: 8 }}>
           <Typography
             variant="body2"
             fontWeight="bold"
@@ -246,24 +305,29 @@ const MultiBrandDesignSystem = () => {
             brand identity.
           </Typography>
         </Stack>
+      </Container>
 
-        <Stack mb={4}>
-          <img
-            src={NewFoldButtonAudit}
-            alt="NewFold Button Audit Comparison"
-            // onLoad={handleHeroImageLoad}
-            style={{
-              width: "100%",
-              height: "auto",
-              margin: "auto",
-              //   opacity: heroImageLoaded ? 1 : 0,
-              transition: "opacity 0.5s ease-in-out",
-              position: "relative",
-              zIndex: 2,
-            }}
-          />
-        </Stack>
+      <Stack mb={8}>
+        {/* <img
+          src={NewFoldButtonAudit}
+          alt="NewFold Button Audit Comparison"
+          // onLoad={handleHeroImageLoad}
+          style={{
+            width: "100%",
+            height: "auto",
+            margin: "auto",
+            //   opacity: heroImageLoaded ? 1 : 0,
+            transition: "opacity 0.5s ease-in-out",
+            position: "relative",
+            zIndex: 2,
+          }}
+        /> */}
+        <Box sx={{ background: "#F6F8FA", py: 8, height: "600px" }}>
+          <Container>Board Img showing task to audit Here</Container>
+        </Box>
+      </Stack>
 
+      <Container>
         <Stack sx={{ mb: 4 }}>
           <Typography
             variant="body2"
@@ -298,7 +362,7 @@ const MultiBrandDesignSystem = () => {
           </Typography>
         </Stack>
 
-        <Stack mb={4}>
+        <Stack mb={8}>
           <img
             src={UserResearch}
             alt="User Interviews with designers, developers, and pm's"
@@ -314,7 +378,9 @@ const MultiBrandDesignSystem = () => {
             }}
           />
         </Stack>
+      </Container>
 
+      <Container>
         <Stack sx={{ mb: 4 }}>
           <Typography
             variant="body2"
@@ -349,24 +415,29 @@ const MultiBrandDesignSystem = () => {
             one system, many voices.
           </Typography>
         </Stack>
+      </Container>
 
-        <Stack mb={4}>
-          <img
-            src={TokenArchitecture}
-            alt="Multi-brand token archietecture overview"
-            // onLoad={handleHeroImageLoad}
-            style={{
-              width: "100%",
-              height: "auto",
-              margin: "auto",
-              //   opacity: heroImageLoaded ? 1 : 0,
-              transition: "opacity 0.5s ease-in-out",
-              position: "relative",
-              zIndex: 2,
-            }}
-          />
-        </Stack>
+      <Stack mb={4}>
+        {/* <img
+          src={TokenArchitecture}
+          alt="Multi-brand token archietecture overview"
+          // onLoad={handleHeroImageLoad}
+          style={{
+            width: "100%",
+            height: "auto",
+            margin: "auto",
+            //   opacity: heroImageLoaded ? 1 : 0,
+            transition: "opacity 0.5s ease-in-out",
+            position: "relative",
+            zIndex: 2,
+          }}
+        /> */}
+        <Box sx={{ background: "#F6F8FA", py: 8, height: "600px" }}>
+          <Container>Updated Token Image here</Container>
+        </Box>
+      </Stack>
 
+      <Container>
         <Stack sx={{ mb: 4 }}>
           <Typography
             variant="body2"
@@ -434,193 +505,189 @@ const MultiBrandDesignSystem = () => {
             </Button>
           </Stack>
         </Stack>
+      </Container>
 
-        <Stack sx={{ mb: 4 }}>
-          <Typography
-            variant="body2"
-            fontWeight="bold"
-            color="#196BDE"
-            mb={0.5}
+      {/* <Stack sx={{ mb: 4 }}>
+        <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={0.5}>
+          RESULTS & SOLUTION
+        </Typography>
+        <Typography variant="h4" fontWeight="bold" mb={2}>
+          Driving Measurable Business Impact
+        </Typography>
+        <Typography variant="body2" mb={2}>
+          The rollout of the design system transformed how Newfold shipped
+          products. By centralizing components and aligning on tokens, delivery
+          became faster, cleaner, and more reliable.
+        </Typography>
+        <Typography variant="body2">
+          These measurable results proved the system was more than design craft
+          — it was a business solution that saved time, reduced risk, and
+          created a cohesive customer experience across dozens of brands.
+        </Typography>
+      </Stack>
+
+      <Grid container spacing={2} mb={4} display="flex">
+        <Grid size={{ md: 4 }}>
+          <Card
+            sx={{
+              p: 4,
+              boxShadow: "none",
+              borderRadius: "8px",
+              background: "#E9EDF0",
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+            }}
           >
-            RESULTS & SOLUTION
-          </Typography>
-          <Typography variant="h4" fontWeight="bold" mb={2}>
-            Driving Measurable Business Impact
-          </Typography>
-          <Typography variant="body2" mb={2}>
-            The rollout of the design system transformed how Newfold shipped
-            products. By centralizing components and aligning on tokens,
-            delivery became faster, cleaner, and more reliable.
-          </Typography>
-          <Typography variant="body2">
-            These measurable results proved the system was more than design
-            craft — it was a business solution that saved time, reduced risk,
-            and created a cohesive customer experience across dozens of brands.
-          </Typography>
-        </Stack>
-
-        <Grid container spacing={2} mb={4} display="flex">
-          <Grid size={{ md: 4 }}>
-            <Card
+            <Typography variant="h1" fontWeight="bold" mb={5}>
+              32%
+            </Typography>
+            <Typography variant="h6" fontWeight="bold" mb={2}>
+              Faster Delivery
+            </Typography>
+            <Typography
+              variant="caption"
               sx={{
-                p: 4,
-                boxShadow: "none",
-                borderRadius: "8px",
-                background: "#E9EDF0",
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                letterSpacing: 0.6,
               }}
+              color="primary"
             >
-              <Typography variant="h1" fontWeight="bold" mb={5}>
-                32%
-              </Typography>
-              <Typography variant="h6" fontWeight="bold" mb={2}>
-                Faster Delivery
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  letterSpacing: 0.6,
-                }}
-                color="primary"
-              >
-                How we measured it
-              </Typography>
-              <Typography mb={1}>
-                Compared average release cycle times before and after migrating
-                high-traffic flows to the unified system.
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  letterSpacing: 0.6,
-                  mt: 2,
-                }}
-                color="primary"
-              >
-                Impact
-              </Typography>
-              <Typography>
-                Accelerated launches across 15+ brands and reduced costly delays
-                tied to duplicated work.
-              </Typography>
-            </Card>
-          </Grid>
-
-          <Grid size={{ md: 4 }}>
-            <Card
+              How we measured it
+            </Typography>
+            <Typography mb={1}>
+              Compared average release cycle times before and after migrating
+              high-traffic flows to the unified system.
+            </Typography>
+            <Typography
+              variant="caption"
               sx={{
-                p: 4,
-                boxShadow: "none",
-                borderRadius: "8px",
-                background: "#E9EDF0",
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                letterSpacing: 0.6,
+                mt: 2,
               }}
+              color="primary"
             >
-              <Typography variant="h1" fontWeight="bold" mb={5}>
-                61%
-              </Typography>
-              <Typography variant="h6" fontWeight="bold" mb={2}>
-                Reusable Components
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  letterSpacing: 0.6,
-                }}
-                color="primary"
-              >
-                How we measured it
-              </Typography>
-              <Typography mb={1}>
-                Tracked component usage across brand repositories using internal
-                engineering analytics.
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  letterSpacing: 0.6,
-                  mt: 2,
-                }}
-                color="primary"
-              >
-                Impact
-              </Typography>
-              <Typography>
-                Eliminated redundant codebases and accelerated onboarding for
-                new brands post-acquisition.
-              </Typography>
-            </Card>
-          </Grid>
-
-          <Grid size={{ md: 4 }}>
-            <Card
-              sx={{
-                p: 4,
-                boxShadow: "none",
-                borderRadius: "8px",
-                background: "#E9EDF0",
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-              }}
-            >
-              <Typography variant="h1" fontWeight="bold" mb={5}>
-                44%
-              </Typography>
-              <Typography variant="h6" fontWeight="bold" mb={2}>
-                Fewer Visual Bugs
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  letterSpacing: 0.6,
-                }}
-                color="primary"
-              >
-                How we measured it
-              </Typography>
-              <Typography mb={1}>
-                Compared UI-related regression tickets before and after adoption
-                using QA reports.
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  letterSpacing: 0.6,
-                  mt: 2,
-                }}
-                color="primary"
-              >
-                Impact
-              </Typography>
-              <Typography>
-                Improved customer trust, reduced inconsistencies, and lowered
-                accessibility-related escalations.
-              </Typography>
-            </Card>
-          </Grid>
+              Impact
+            </Typography>
+            <Typography>
+              Accelerated launches across 15+ brands and reduced costly delays
+              tied to duplicated work.
+            </Typography>
+          </Card>
         </Grid>
 
-        {/* <Stack sx={{ mb: 4 }}>
+        <Grid size={{ md: 4 }}>
+          <Card
+            sx={{
+              p: 4,
+              boxShadow: "none",
+              borderRadius: "8px",
+              background: "#E9EDF0",
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+            }}
+          >
+            <Typography variant="h1" fontWeight="bold" mb={5}>
+              61%
+            </Typography>
+            <Typography variant="h6" fontWeight="bold" mb={2}>
+              Reusable Components
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                textTransform: "uppercase",
+                fontWeight: 700,
+                letterSpacing: 0.6,
+              }}
+              color="primary"
+            >
+              How we measured it
+            </Typography>
+            <Typography mb={1}>
+              Tracked component usage across brand repositories using internal
+              engineering analytics.
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                textTransform: "uppercase",
+                fontWeight: 700,
+                letterSpacing: 0.6,
+                mt: 2,
+              }}
+              color="primary"
+            >
+              Impact
+            </Typography>
+            <Typography>
+              Eliminated redundant codebases and accelerated onboarding for new
+              brands post-acquisition.
+            </Typography>
+          </Card>
+        </Grid>
+
+        <Grid size={{ md: 4 }}>
+          <Card
+            sx={{
+              p: 4,
+              boxShadow: "none",
+              borderRadius: "8px",
+              background: "#E9EDF0",
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+            }}
+          >
+            <Typography variant="h1" fontWeight="bold" mb={5}>
+              44%
+            </Typography>
+            <Typography variant="h6" fontWeight="bold" mb={2}>
+              Fewer Visual Bugs
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                textTransform: "uppercase",
+                fontWeight: 700,
+                letterSpacing: 0.6,
+              }}
+              color="primary"
+            >
+              How we measured it
+            </Typography>
+            <Typography mb={1}>
+              Compared UI-related regression tickets before and after adoption
+              using QA reports.
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                textTransform: "uppercase",
+                fontWeight: 700,
+                letterSpacing: 0.6,
+                mt: 2,
+              }}
+              color="primary"
+            >
+              Impact
+            </Typography>
+            <Typography>
+              Improved customer trust, reduced inconsistencies, and lowered
+              accessibility-related escalations.
+            </Typography>
+          </Card>
+        </Grid>
+      </Grid> */}
+
+      {/* <Stack sx={{ mb: 4 }}>
         <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={0.5}>
           REFLECTION
         </Typography>
@@ -639,7 +706,7 @@ const MultiBrandDesignSystem = () => {
           flexible, and ready to grow.
         </Typography>
       </Stack> */}
-      </Container>
+      {/* </Container> */}
     </>
   );
 };

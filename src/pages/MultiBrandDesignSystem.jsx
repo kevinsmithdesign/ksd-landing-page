@@ -23,6 +23,8 @@ import NewFoldButtonAudit from "../assets/images/NewFoldButtonAudit.png";
 import UserResearch from "../assets/images/UserResearch.png";
 import TokenArchitecture from "../assets/images/TokenArchitecture.png";
 
+import CrazyDomains from "../assets/images/CrazyDomains.avif";
+
 const MultiBrandDesignSystem = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -71,6 +73,7 @@ const MultiBrandDesignSystem = () => {
     { brand: "Domain.com", link: "https://domain.com", borderColor: "#E24747" },
     { brand: "iPage", link: "", borderColor: "#53BB62" },
     { brand: "Crazydomains.com", link: "", borderColor: "#6EAB2F" },
+    // { brand: CrazyDomains, link: "", borderColor: "#6EAB2F" },
     {
       brand: "Network Solutions",
       link: "https://networksolutions.com",
@@ -260,6 +263,7 @@ const MultiBrandDesignSystem = () => {
                   <Typography variant="h6" fontWeight="bold">
                     {brand}
                   </Typography>
+                  {/* <img src={brand} /> */}
                 </Card>
               </Grid>
             ))}
@@ -335,8 +339,23 @@ const MultiBrandDesignSystem = () => {
             zIndex: 2,
           }}
         /> */}
-        <Box sx={{ background: "#F6F8FA", py: 8, height: "600px" }}>
-          <Container>Board Img showing task to audit Here</Container>
+        <Box sx={{ background: "#F6F8FA", py: 8 }}>
+          <Container>
+            <img
+              src={NewFoldButtonAudit}
+              alt="NewFold Button Audit Comparison"
+              // onLoad={handleHeroImageLoad}
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "auto",
+                //   opacity: heroImageLoaded ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+                position: "relative",
+                zIndex: 2,
+              }}
+            />
+          </Container>
         </Box>
       </Stack>
 

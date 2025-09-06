@@ -251,7 +251,7 @@ const MultiBrandDesignSystem = () => {
           </Typography>
           <Grid container spacing={1}>
             {newfoldBrands.map(({ brand, link, borderColor }) => (
-              <Grid size={{ md: 4 }}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                 <Card
                   sx={{
                     p: 4,

@@ -38,6 +38,7 @@ const createCards = (imageUrls) =>
       <img
         src={url}
         alt={`Image ${i + 1}`}
+        loading="lazy"
         style={{
           width: "100%",
           height: "100%",
@@ -52,6 +53,7 @@ const topCards = createCards(topImageUrls);
 const bottomCards = createCards(bottomImageUrls);
 
 export default function App() {
+
   return (
     <Container
       disableGutters

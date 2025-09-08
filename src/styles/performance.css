@@ -1,0 +1,83 @@
+/* Performance optimizations to prevent layout shifts */
+
+/* Font loading optimization */
+body {
+  font-display: swap; /* Ensures text remains visible during font load */
+}
+
+/* Prevent layout shifts with proper sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure images don't cause layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent cumulative layout shift (CLS) */
+.prevent-cls {
+  contain: layout style paint;
+}
+
+/* Smooth transitions for loading states */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Optimize animations for better performance */
+.motion-safe {
+  will-change: transform;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize for older devices */
+@media (max-width: 768px) {
+  .motion-safe {
+    will-change: auto;
+    transform: none;
+  }
+}
+
+/* Skeleton loading animations */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Dark mode skeleton */
+[data-theme="dark"] .skeleton-shimmer {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200px 100%;
+}

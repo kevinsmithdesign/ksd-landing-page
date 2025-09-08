@@ -716,7 +716,7 @@ const SprintViewCaseStudy = () => {
             </Grid>
           </Grid>
         </Container>
-        <Box sx={{ background: "#B6BAEA" }}>
+        <Box sx={{ background: "#B6BAEA", py: 1 }}>
           <Container>
             <img
               src={SprintViewBoard}

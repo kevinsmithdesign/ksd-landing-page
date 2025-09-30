@@ -38,7 +38,11 @@ const createCards = (imageUrls) =>
       <img
         src={url}
         alt={`Image ${i + 1}`}
-        loading="lazy"
+        loading="eager"
+        decoding="async"
+        fetchPriority={i < 2 ? "high" : "auto"}
+        width="320"
+        height="240"
         style={{
           width: "100%",
           height: "100%",
@@ -62,7 +66,7 @@ export default function App() {
     >
       {/* TOP ROW - moves right */}
       <motion.div
-        style={{ display: "flex" }}
+        style={{ display: "flex", willChange: "transform" }}
         animate={{ x: ["-100%", "0%"] }}
         transition={{
           repeat: Infinity,
@@ -75,7 +79,7 @@ export default function App() {
 
       {/* BOTTOM ROW - moves left */}
       <motion.div
-        style={{ display: "flex", marginTop: "32px" }}
+        style={{ display: "flex", marginTop: "32px", willChange: "transform" }}
         animate={{ x: ["0%", "-100%"] }}
         transition={{
           repeat: Infinity,

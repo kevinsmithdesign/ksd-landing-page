@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kevinsmithdesign.com/sitemap.xml
+Host: kevinsmithdesign.com

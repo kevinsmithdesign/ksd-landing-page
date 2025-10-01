@@ -25,6 +25,7 @@ import DesignPrototype from "./assets/images/DesignPrototype";
 import TestingQualityAssurance from "./assets/images/TestingQualityAssurance";
 import LaunchOptimization from "./assets/images/LaunchOptimization";
 import ImgCarousel from "./components/ImgCarousel";
+import ReviewCarousel from "./components/ReviewCarousel";
 import Loader from "./components/Loader";
 import DevelopmentImplementation from "./assets/images/DevelopmentImplementation";
 import PurpleShape from "./assets/images/PurpleShape";
@@ -680,13 +681,22 @@ export default function App() {
           >
             FAQ
           </Typography>
-          {/* <Card style={cardStyles}>
-            <Typography sx={{ fontSize: "22px", fontWeight: "bold" }}>
-              Do you prefer design or development?
-            </Typography>
-          </Card> */}
           <FaqAccordion />
         </Container>
+
+        <Box sx={{ my: 20 }}>
+          <Container>
+            <Typography
+              variant="h1"
+              color="text.primary"
+              fontSize={{ xs: "60px", sm: "80px" }}
+              mb={2}
+            >
+              REVIEWS
+            </Typography>
+          </Container>
+          <ReviewCarousel />
+        </Box>
       </div>
       <footer ref={footerRef}>
         <Box

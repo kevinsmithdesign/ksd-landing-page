@@ -684,19 +684,17 @@ export default function App() {
           <FaqAccordion />
         </Container>
 
-        <Box sx={{ my: 20 }}>
-          <Container>
-            <Typography
-              variant="h1"
-              color="text.primary"
-              fontSize={{ xs: "60px", sm: "80px" }}
-              mb={2}
-            >
-              REVIEWS
-            </Typography>
-          </Container>
+        <Container sx={{ my: 20 }}>
+          <Typography
+            variant="h1"
+            color="text.primary"
+            fontSize={{ xs: "60px", sm: "80px" }}
+            mb={2}
+          >
+            REVIEWS
+          </Typography>
           <ReviewCarousel />
-        </Box>
+        </Container>
       </div>
       <footer ref={footerRef}>
         <Box

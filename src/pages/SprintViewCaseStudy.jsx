@@ -279,7 +279,7 @@ const SprintViewCaseStudy = () => {
                         justifyContent: "center",
                       }}
                     >
-                      <ClockIcon />
+                      <ClockIcon width={24} height={24} />
                     </Box>
                   </Stack>
                 </Stack>

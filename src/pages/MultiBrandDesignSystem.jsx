@@ -21,8 +21,13 @@ import Hosting4 from "../assets/images/Hosting4.png";
 import NewFoldButtonAudit from "../assets/images/NewFoldButtonAudit.png";
 import UserResearch from "../assets/images/UserResearch.png";
 import TokenArchitecture from "../assets/images/TokenArchitecture.png";
-
-import CrazyDomains from "../assets/images/CrazyDomains.avif";
+import ConfoundIcon from "../icons/ConfoundIcon";
+import DuplicateIcon from "../icons/DuplicateIcon";
+import ClockIcon from "../icons/ClockIcon";
+import NewFoldAudit from "../assets/images/NewFoldAudit.png";
+import WebSiteIcon from "../icons/WebSiteIcon";
+import UxIcon from "../icons/UxIcon";
+import ToolIcon from "../icons/ToolIcon";
 
 const MultiBrandDesignSystem = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -221,10 +226,15 @@ const MultiBrandDesignSystem = () => {
                 sx={{
                   width: "80px",
                   height: "80px",
-                  background: "#ddd",
+                  background: "#F16362",
                   borderRadius: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
-              ></Box>
+              >
+                <ConfoundIcon width={40} height={40} />
+              </Box>
               <Box>
                 <Typography variant="h5" fontWeight="bold">
                   Inconsistent experiences
@@ -240,12 +250,17 @@ const MultiBrandDesignSystem = () => {
             <Stack flexDirection="row" alignItems="center" gap={3}>
               <Box
                 sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   width: "80px",
                   height: "80px",
-                  background: "#ddd",
+                  background: "#F7946F",
                   borderRadius: "8px",
                 }}
-              ></Box>
+              >
+                <DuplicateIcon width={40} height={40} />
+              </Box>
               <Box>
                 <Typography variant="h5" fontWeight="bold">
                   Heavy duplication of effort
@@ -260,12 +275,17 @@ const MultiBrandDesignSystem = () => {
             <Stack flexDirection="row" alignItems="center" gap={3}>
               <Box
                 sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   width: "80px",
                   height: "80px",
-                  background: "#ddd",
+                  background: "#FCD98E",
                   borderRadius: "8px",
                 }}
-              ></Box>
+              >
+                <ClockIcon width={40} height={40} />
+              </Box>
               <Box>
                 <Typography variant="h5" fontWeight="bold">
                   Slow, costly change
@@ -309,26 +329,22 @@ const MultiBrandDesignSystem = () => {
           </Typography>
         </Stack>
       </Container>
-      {/* <Stack mb={8}>
-        <Box sx={{ background: "#F6F8FA", py: 8 }}>
+
+      <Stack mb={16}>
+        <Box sx={{ background: "#DEE9FB", py: 8 }}>
           <Container>
             <img
-              src={NewFoldButtonAudit}
-              alt="NewFold Button Audit Comparison"
-              // onLoad={handleHeroImageLoad}
+              src={NewFoldAudit}
+              alt="NewFold Digital Audit Page"
               style={{
                 width: "100%",
                 height: "auto",
-                margin: "auto",
-                //   opacity: heroImageLoaded ? 1 : 0,
-                transition: "opacity 0.5s ease-in-out",
-                position: "relative",
-                zIndex: 2,
               }}
             />
           </Container>
         </Box>
-      </Stack> */}
+      </Stack>
+
       <Container>
         <Stack sx={{ mb: 16, maxWidth: "760px", mx: "auto" }}>
           <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={1}>
@@ -359,6 +375,89 @@ const MultiBrandDesignSystem = () => {
           </Typography>
         </Stack>
       </Container>
+
+      <Stack mb={16}>
+        <Box sx={{ background: "#F6F8FA", py: 16 }}>
+          <Stack sx={{ width: "760px", mx: "auto", mb: 6 }}>
+            <Stack flexDirection="row" alignItems="center" gap={3}>
+              <Box
+                sx={{
+                  width: "80px",
+                  height: "80px",
+                  background: "#77B8A0",
+                  borderRadius: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <WebSiteIcon width={40} height={40} />
+              </Box>
+              <Box>
+                <Typography variant="h5" fontWeight="bold">
+                  Fragmented patterns
+                </Typography>
+                <Typography variant="body1">
+                  Customers struggled moving between brands as menus, flows, and
+                  interactions varied.
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+          <Stack sx={{ width: "760px", mx: "auto", mb: 6 }}>
+            <Stack flexDirection="row" alignItems="center" gap={3}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "80px",
+                  height: "80px",
+                  background: "#B6BAEA",
+                  borderRadius: "8px",
+                }}
+              >
+                <UxIcon width={40} height={40} />
+              </Box>
+              <Box>
+                <Typography variant="h5" fontWeight="bold">
+                  Accessibility & usability gaps
+                </Typography>
+                <Typography variant="body1">
+                  Inconsistent tokens and patterns created barriers for
+                  customers and slowed teams.
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+          <Stack sx={{ width: "760px", mx: "auto" }}>
+            <Stack flexDirection="row" alignItems="center" gap={3}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "80px",
+                  height: "80px",
+                  background: "#FED2D7",
+                  borderRadius: "8px",
+                }}
+              >
+                <ToolIcon height={40} width={40} />
+              </Box>
+              <Box>
+                <Typography variant="h5" fontWeight="bold">
+                  Reinvented solutions wasting time
+                </Typography>
+                <Typography variant="body1">
+                  Designers and engineers repeatedly rebuilt components instead
+                  of reusing them.
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
       {/* <Stack mb={8}>
         <Box sx={{ background: "#F6F8FA", py: 8 }}>
           <Container>
@@ -470,13 +569,13 @@ const MultiBrandDesignSystem = () => {
             codebase could generate multiple brand expressions without
             duplication.
           </Typography>
-          <Typography variant="body2" mb={2}>
+          <Typography variant="body2" mb={4}>
             We documented clear usage guidelines and paired every component with
             accessibility best practices. This ensured consistency not just in
             look and feel, but in how teams implemented them across the
             portfolio.
           </Typography>
-          <Stack flexDirection="row" gap={1}>
+          <Stack flexDirection="row" gap={2}>
             <Button
               variant="outlined"
               component="a"

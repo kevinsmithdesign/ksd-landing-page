@@ -47,7 +47,6 @@ import DevelopmentWorkWrapper from "./components/DevelopmentWorkWrapper";
 import FaqAccordion from "./components/FaqAccordion";
 
 export default function App() {
-  const footerRef = useRef(null);
   const cardStyles = {
     padding: "40px",
     borderRadius: "16px",
@@ -59,10 +58,10 @@ export default function App() {
   const theme = useMemo(() => createCustomTheme(themeMode), [themeMode]);
   const handleThemeChange = (mode) => setThemeMode(mode);
   const [activeTab, setActiveTab] = useState("Design");
+  const bookCallRef = useRef(null);
 
-  // Add this function inside your App component:
   const scrollToContact = () => {
-    footerRef.current?.scrollIntoView({
+    bookCallRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -115,6 +114,10 @@ export default function App() {
             color="text.primary"
             mb={2}
             fontSize={{ xs: "60px", sm: "80px" }}
+            // sx={{
+            //   fontFamily: '"Tanker", sans-serif',
+            //   fontWeight: 700,
+            // }}
           >
             SERVICES
           </Typography>
@@ -672,6 +675,86 @@ export default function App() {
             {activeTab === "Development" && <DevelopmentWorkWrapper />}
           </Stack>
         </Container>
+
+        <Container sx={{ mt: 20 }}>
+          <Typography
+            variant="h1"
+            color="text.primary"
+            fontSize={{ xs: "60px", sm: "80px" }}
+            mb={2}
+          >
+            REVIEWS
+          </Typography>
+          <ReviewCarousel />
+        </Container>
+        <Container sx={{ my: 20 }}>
+          <Typography
+            variant="h1"
+            color="text.primary"
+            fontSize={{ xs: "60px", sm: "80px" }}
+            mb={2}
+          >
+            ABOUT
+          </Typography>
+          <Card style={cardStyles}>
+            <Grid container spacing={6}>
+              <Grid size={{ xs: 12, md: 4 }}>
+                <Box
+                  sx={{
+                    background: "#222",
+                    width: "100%",
+                    height: "500px",
+
+                    borderRadius: "8px",
+                  }}
+                ></Box>
+              </Grid>
+              <Grid size={{ xs: 12, md: 8 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    height: "100%",
+                  }}
+                >
+                  <Box>
+                    <Typography variant="h2" mb={3}>
+                      Houston-based designer & developer focused on quality and
+                      usability. I help startups and brands ship better
+                      products. Currently available for select projects.
+                    </Typography>
+                    <Typography variant="body1" color="text.primary" mb={3}>
+                      I've spent the last 10 years designing and developing
+                      digital products from 0 to 1. I work across the full
+                      stack—from user research and prototyping to
+                      production-ready code. My sweet spot is early-stage
+                      startups that need someone who can do both: think through
+                      complex UX problems and ship it.
+                    </Typography>
+                    <Typography variant="body1" color="text.primary" mb={3}>
+                      I've helped ship products that raised funding, hit
+                      profitability, and got acquired. I've also worked on
+                      things that failed spectacularly. Both taught me what
+                      actually matters: solving real problems for real people.
+                    </Typography>
+                    <Typography variant="body1" color="text.primary" mb={3}>
+                      When I'm not shipping products, you'll find me
+                      skateboarding, hunting down Houston's best donuts, or
+                      yelling at the Houston Texans through my TV.
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Button variant="contained" onClick={scrollToContact}>
+                      Let's Talk
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
+          </Card>
+        </Container>
+
         <Container sx={{ my: 20 }}>
           <Typography
             variant="h1"
@@ -683,20 +766,43 @@ export default function App() {
           </Typography>
           <FaqAccordion />
         </Container>
-
         <Container sx={{ my: 20 }}>
           <Typography
             variant="h1"
             color="text.primary"
             fontSize={{ xs: "60px", sm: "80px" }}
             mb={2}
+            ref={bookCallRef}
           >
-            REVIEWS
+            BOOK A CALL
           </Typography>
-          <ReviewCarousel />
+          <Box
+            sx={{
+              borderRadius: "16px",
+              overflow: "hidden",
+              border: "1px solid",
+              // borderColor: "divider",
+              borderColor: "transparent",
+              backgroundColor: "background.paper",
+              minHeight: "600px",
+            }}
+          >
+            <Box
+              component="iframe"
+              title="Book a call"
+              src="https://cal.com/kevinsmithdesign/15min?embed=inline&primaryColor=745AFC&hideEventTypeDetails=1&hide_landing_page_details=1"
+              style={{
+                width: "100%",
+                height: "700px",
+                border: 0,
+                display: "block",
+              }}
+              allow="camera; microphone; autoplay; encrypted-media"
+            />
+          </Box>
         </Container>
       </div>
-      <footer ref={footerRef}>
+      <footer>
         <Box
           sx={{
             background: "#111",

@@ -18,7 +18,6 @@ import Hosting1 from "../assets/images/Hosting1.png";
 import Hosting2 from "../assets/images/Hosting2.png";
 import Hosting3 from "../assets/images/Hosting3.png";
 import Hosting4 from "../assets/images/Hosting4.png";
-import NewFoldDigitalBeforeAfter from "../assets/images/NewFoldDigitalBeforeAfter.png";
 import NewFoldButtonAudit from "../assets/images/NewFoldButtonAudit.png";
 import UserResearch from "../assets/images/UserResearch.png";
 import TokenArchitecture from "../assets/images/TokenArchitecture.png";
@@ -161,20 +160,7 @@ const MultiBrandDesignSystem = () => {
             </Box>
           </Stack>
 
-          <Stack mb={8}>
-            {/* <img
-              src={Hosting1}
-              alt="Bluehost select a plan page"
-              style={{
-                width: "100%",
-                height: "auto",
-                margin: "auto",
-                transition: "opacity 0.5s ease-in-out",
-                position: "relative",
-                zIndex: 2,
-                paddingBottom: "48px",
-              }}
-            /> */}
+          <Stack mb={16}>
             <img
               src={currentImage.src}
               alt={currentImage.alt}
@@ -191,18 +177,12 @@ const MultiBrandDesignSystem = () => {
           </Stack>
         </Container>
       </Box>
-
       <Container>
-        <Stack sx={{ mb: 8 }}>
-          <Typography
-            variant="body2"
-            fontWeight="bold"
-            color="#196BDE"
-            mb={0.5}
-          >
+        <Stack sx={{ mb: 16, maxWidth: "760px", mx: "auto" }}>
+          <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={1}>
             PROBLEM & CONTEXT
           </Typography>
-          <Typography variant="h4" fontWeight="bold" mb={2}>
+          <Typography variant="h3" fontWeight="bold" mb={4}>
             Dozens of Brands, Dozens of Design Languages
           </Typography>
           <Typography variant="body2" mb={2}>
@@ -223,79 +203,85 @@ const MultiBrandDesignSystem = () => {
             Each brand operated independently for years, developing its own
             design language, its own component library, and its own customer
             experience. This autonomy helped brands retain their unique identity
-            but created systemic problems at scale:
+            but created systemic problems at scale.
           </Typography>
-          <Typography variant="body2">
-            <b>Inconsistent experiences</b> — customers moving between brands
-            encountered fragmented patterns.
-          </Typography>
-          <Typography variant="body2">
-            <b>Heavy duplication of effort</b> — teams solved the same problems
-            repeatedly in silos.
-          </Typography>
-          <Typography variant="body2" mb={2}>
-            <b>Slow, costly change</b> — refreshes and improvements multiplied
-            across codebases.
-          </Typography>
-          <Typography variant="body2">
+
+          {/* <Typography variant="body2">
             Instead of efficiency, scale produced friction. For Newfold to truly
             operate as a portfolio company, it needed a system that unified
             foundations while preserving the unique expression of each brand.
-          </Typography>
+          </Typography> */}
         </Stack>
       </Container>
-      <Box sx={{ background: "#F6F8FA", py: 8 }}>
-        <Container>
-          <Typography variant="h4" fontWeight="bold" mb={2}>
-            Brands
-          </Typography>
-          <Grid container spacing={1}>
-            {newfoldBrands.map(({ brand, link, borderColor }) => (
-              <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-                <Card
-                  sx={{
-                    p: 4,
-                    boxShadow: "none",
-                    borderRadius: "8px",
-                    // borderLeft: `8px solid ${borderColor}`,
-                  }}
-                >
-                  <Typography variant="h6" fontWeight="bold">
-                    {brand}
-                  </Typography>
-                  {/* <img src={brand} /> */}
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* <Stack mb={4}>
-        <img
-          src={NewFoldDigitalBeforeAfter}
-          alt="NewFold Before and After Comparison Chart"
-          // onLoad={handleHeroImageLoad}
-          style={{
-            width: "100%",
-            height: "auto",
-            margin: "auto",
-            //   opacity: heroImageLoaded ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-            position: "relative",
-            zIndex: 2,
-          }}
-        />
-      </Stack> */}
-
+      <Stack mb={16}>
+        <Box sx={{ background: "#F6F8FA", py: 16 }}>
+          <Stack sx={{ width: "760px", mx: "auto", mb: 6 }}>
+            <Stack flexDirection="row" alignItems="center" gap={3}>
+              <Box
+                sx={{
+                  width: "80px",
+                  height: "80px",
+                  background: "#ddd",
+                  borderRadius: "8px",
+                }}
+              ></Box>
+              <Box>
+                <Typography variant="h5" fontWeight="bold">
+                  Inconsistent experiences
+                </Typography>
+                <Typography variant="body1">
+                  Customers moving between brands encountered fragmented
+                  patterns.
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+          <Stack sx={{ width: "760px", mx: "auto", mb: 6 }}>
+            <Stack flexDirection="row" alignItems="center" gap={3}>
+              <Box
+                sx={{
+                  width: "80px",
+                  height: "80px",
+                  background: "#ddd",
+                  borderRadius: "8px",
+                }}
+              ></Box>
+              <Box>
+                <Typography variant="h5" fontWeight="bold">
+                  Heavy duplication of effort
+                </Typography>
+                <Typography variant="body1">
+                  Teams solved the same problems repeatedly in silos.
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+          <Stack sx={{ width: "760px", mx: "auto" }}>
+            <Stack flexDirection="row" alignItems="center" gap={3}>
+              <Box
+                sx={{
+                  width: "80px",
+                  height: "80px",
+                  background: "#ddd",
+                  borderRadius: "8px",
+                }}
+              ></Box>
+              <Box>
+                <Typography variant="h5" fontWeight="bold">
+                  Slow, costly change
+                </Typography>
+                <Typography variant="body1">
+                  Refreshes and improvements multiplied across codebases.
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
       <Container>
-        <Stack sx={{ py: 8 }}>
-          <Typography
-            variant="body2"
-            fontWeight="bold"
-            color="#196BDE"
-            mb={0.5}
-          >
+        {/* <Stack sx={{ mb: 8 }}> */}
+        <Stack sx={{ mb: 16, maxWidth: "760px", mx: "auto" }}>
+          <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={1}>
             DISCOVERY
           </Typography>
           <Typography variant="h4" fontWeight="bold" mb={2}>
@@ -323,22 +309,7 @@ const MultiBrandDesignSystem = () => {
           </Typography>
         </Stack>
       </Container>
-
-      <Stack mb={8}>
-        {/* <img
-          src={NewFoldButtonAudit}
-          alt="NewFold Button Audit Comparison"
-          // onLoad={handleHeroImageLoad}
-          style={{
-            width: "100%",
-            height: "auto",
-            margin: "auto",
-            //   opacity: heroImageLoaded ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-            position: "relative",
-            zIndex: 2,
-          }}
-        /> */}
+      {/* <Stack mb={8}>
         <Box sx={{ background: "#F6F8FA", py: 8 }}>
           <Container>
             <img
@@ -357,16 +328,10 @@ const MultiBrandDesignSystem = () => {
             />
           </Container>
         </Box>
-      </Stack>
-
+      </Stack> */}
       <Container>
-        <Stack sx={{ mb: 8 }}>
-          <Typography
-            variant="body2"
-            fontWeight="bold"
-            color="#196BDE"
-            mb={0.5}
-          >
+        <Stack sx={{ mb: 16, maxWidth: "760px", mx: "auto" }}>
+          <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={1}>
             RESEARCH
           </Typography>
           <Typography variant="h4" fontWeight="bold" mb={2}>
@@ -394,8 +359,7 @@ const MultiBrandDesignSystem = () => {
           </Typography>
         </Stack>
       </Container>
-
-      <Stack mb={8}>
+      {/* <Stack mb={8}>
         <Box sx={{ background: "#F6F8FA", py: 8 }}>
           <Container>
             <img
@@ -414,16 +378,30 @@ const MultiBrandDesignSystem = () => {
             />
           </Container>
         </Box>
-      </Stack>
-
+      </Stack> */}
+      {/* <Stack mb={16}>
+        <Box sx={{ background: "#F6F8FA", py: 16 }}>
+          <Container>
+            <img
+              src={TokenArchitecture}
+              alt="Multi-brand token archietecture overview"
+              // onLoad={handleHeroImageLoad}
+              style={{
+                width: "100%",
+                height: "auto",
+                margin: "auto",
+                //   opacity: heroImageLoaded ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+                position: "relative",
+                zIndex: 2,
+              }}
+            />
+          </Container>
+        </Box>
+      </Stack> */}
       <Container>
-        <Stack sx={{ mb: 8 }}>
-          <Typography
-            variant="body2"
-            fontWeight="bold"
-            color="#196BDE"
-            mb={0.5}
-          >
+        <Stack sx={{ mb: 16, maxWidth: "760px", mx: "auto" }}>
+          <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={1}>
             GOALS & APPROACH
           </Typography>
           <Typography variant="h4" fontWeight="bold" mb={2}>
@@ -452,22 +430,7 @@ const MultiBrandDesignSystem = () => {
           </Typography>
         </Stack>
       </Container>
-
-      <Stack mb={8}>
-        {/* <img
-          src={TokenArchitecture}
-          alt="Multi-brand token archietecture overview"
-          // onLoad={handleHeroImageLoad}
-          style={{
-            width: "100%",
-            height: "auto",
-            margin: "auto",
-            //   opacity: heroImageLoaded ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-            position: "relative",
-            zIndex: 2,
-          }}
-        /> */}
+      <Stack mb={16}>
         <Box sx={{ background: "#F6F8FA", py: 16 }}>
           <Container>
             <img
@@ -487,15 +450,9 @@ const MultiBrandDesignSystem = () => {
           </Container>
         </Box>
       </Stack>
-
       <Container>
-        <Stack sx={{ mb: 8 }}>
-          <Typography
-            variant="body2"
-            fontWeight="bold"
-            color="#196BDE"
-            mb={0.5}
-          >
+        <Stack sx={{ mb: 16, maxWidth: "760px", mx: "auto" }}>
+          <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={1}>
             EXECUTION & DESIGN
           </Typography>
           <Typography variant="h4" fontWeight="bold" mb={2}>
@@ -557,27 +514,7 @@ const MultiBrandDesignSystem = () => {
           </Stack>
         </Stack>
       </Container>
-
-      {/* <Stack sx={{ mb: 4 }}>
-        <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={0.5}>
-          RESULTS & SOLUTION
-        </Typography>
-        <Typography variant="h4" fontWeight="bold" mb={2}>
-          Driving Measurable Business Impact
-        </Typography>
-        <Typography variant="body2" mb={2}>
-          The rollout of the design system transformed how Newfold shipped
-          products. By centralizing components and aligning on tokens, delivery
-          became faster, cleaner, and more reliable.
-        </Typography>
-        <Typography variant="body2">
-          These measurable results proved the system was more than design craft
-          — it was a business solution that saved time, reduced risk, and
-          created a cohesive customer experience across dozens of brands.
-        </Typography>
-      </Stack>
-
-      <Grid container spacing={2} mb={4} display="flex">
+      {/* <Grid container spacing={2} mb={4} display="flex">
         <Grid size={{ md: 4 }}>
           <Card
             sx={{
@@ -736,28 +673,7 @@ const MultiBrandDesignSystem = () => {
             </Typography>
           </Card>
         </Grid>
-      </Grid> */}
-
-      {/* <Stack sx={{ mb: 4 }}>
-        <Typography variant="body2" fontWeight="bold" color="#196BDE" mb={0.5}>
-          REFLECTION
-        </Typography>
-        <Typography variant="h4" fontWeight="bold" mb={2}>
-          From Fragmentation to Foundation
-        </Typography>
-        <Typography variant="body2" mb={2}>
-          What began as a tangle of independent systems and conflicting patterns
-          evolved into a shared foundation powering every brand. The design
-          system turned scale from a liability into an advantage — enabling
-          Newfold to move faster, reduce risk, and create consistent, accessible
-          experiences without sacrificing brand identity.
-        </Typography>
-        <Typography variant="body2">
-          In the end, dozens of voices now speak through one system: unified,
-          flexible, and ready to grow.
-        </Typography>
-      </Stack> */}
-      {/* </Container> */}
+      </Grid>{" "} */}
     </>
   );
 };

@@ -70,22 +70,19 @@ const bottomReviews = [
     rating: 5,
   },
   {
-    quote:
-      "His motion work added delight without sacrificing performance.",
+    quote: "His motion work added delight without sacrificing performance.",
     author: "Taylor Brooks",
     role: "Design Lead, MediaHub",
     rating: 5,
   },
   {
-    quote:
-      "Strategic partner who asks the right questions and ships results.",
+    quote: "Strategic partner who asks the right questions and ships results.",
     author: "Avery Johnson",
     role: "CEO, SeedFlow",
     rating: 5,
   },
   {
-    quote:
-      "Thoughtful end-to-end—research, design, testing, and code. 10/10.",
+    quote: "Thoughtful end-to-end—research, design, testing, and code. 10/10.",
     author: "Sam Rivera",
     role: "Product Director, HomeTech",
     rating: 5,
@@ -97,42 +94,50 @@ const createReviewCards = (reviews) =>
   reviews
     .filter((r) => r.rating === 5)
     .map((r, i) => (
-    <Box
-      key={i}
-      sx={{
-        width: 320,
-        height: 240,
-        borderRadius: "12px",
-        marginRight: "24px",
-        flexShrink: 0,
-        p: 3,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        bgcolor: (theme) =>
-          theme.palette.mode === "dark" ? "#181818" : "#F6F6F7",
-        border: (theme) =>
-          `1px solid ${theme.palette.mode === "dark" ? "#262626" : "#E6E6E6"}`,
-      }}
-    >
-      <Typography
-        variant="body1"
-        color="text.primary"
-        sx={{ lineHeight: 1.5 }}
+      <Box
+        key={i}
+        sx={{
+          width: 320,
+          height: 280,
+          marginRight: "8px",
+          padding: "40px",
+          borderRadius: "16px",
+          backgroundColor: "background.paper",
+          flexShrink: 0,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between", // ← Add this back
+        }}
       >
-        “{r.quote}”
-      </Typography>
-      <Rating value={r.rating} max={5} precision={1} readOnly size="small" sx={{ mt: 1 }} />
-      <Box>
-        <Typography variant="subtitle1" color="text.primary" fontWeight={600}>
-          {r.author}
-        </Typography>
-        <Typography variant="caption" color="text.secondary">
-          {r.role}
-        </Typography>
+        <Box>
+          <Typography
+            variant="body1"
+            color="text.primary"
+            sx={{ lineHeight: 1.5, mb: 2 }}
+          >
+            "{r.quote}"
+          </Typography>
+          <Rating
+            value={r.rating}
+            max={5}
+            precision={1}
+            readOnly
+            size="small"
+          />
+        </Box>
+
+        <Box>
+          {" "}
+          {/* Author section stays at bottom */}
+          <Typography variant="subtitle1" color="text.primary" fontWeight={600}>
+            {r.author}
+          </Typography>
+          <Typography variant="caption" color="text.secondary">
+            {r.role}
+          </Typography>
+        </Box>
       </Box>
-    </Box>
-  ));
+    ));
 
 // Generate cards for top and bottom rows
 const topCards = createReviewCards(topReviews);
@@ -140,11 +145,7 @@ const bottomCards = createReviewCards(bottomReviews);
 
 export default function ReviewCarousel() {
   return (
-    <Container
-      disableGutters
-      maxWidth={false}
-      sx={{ overflow: "hidden", py: 3 }}
-    >
+    <Container disableGutters maxWidth={false} sx={{ overflow: "hidden" }}>
       {/* TOP ROW - moves right */}
       <motion.div
         style={{ display: "flex", willChange: "transform" }}
@@ -160,7 +161,7 @@ export default function ReviewCarousel() {
 
       {/* BOTTOM ROW - moves left */}
       <motion.div
-        style={{ display: "flex", marginTop: "32px", willChange: "transform" }}
+        style={{ display: "flex", marginTop: "8px", willChange: "transform" }}
         animate={{ x: ["0%", "-100%"] }}
         transition={{
           repeat: Infinity,

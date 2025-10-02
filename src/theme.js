@@ -140,8 +140,8 @@ const createCustomTheme = (mode) => {
         styleOverrides: {
           root: {
             borderRadius: 12,
-            boxShadow: "0 24px 12px  rgba(25, 118, 210, 0.01)",
-            backgroundColor: isLight ? "#fff" : "#000",
+            // boxShadow: "0 24px 12px  rgba(25, 118, 210, 0.01)",
+            backgroundColor: isLight ? "#fff" : "#080808",
           },
         },
       },

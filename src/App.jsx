@@ -779,17 +779,7 @@ export default function App() {
           >
             BOOK A CALL
           </Typography>
-          <Box
-            sx={{
-              borderRadius: "16px",
-              overflow: "hidden",
-              border: "1px solid",
-              // borderColor: "divider",
-              borderColor: "transparent",
-              backgroundColor: "background.paper",
-              minHeight: "600px",
-            }}
-          >
+          <Card style={cardStyles}>
             <Box
               component="iframe"
               title="Book a call"
@@ -799,10 +789,11 @@ export default function App() {
                 height: "700px",
                 border: 0,
                 display: "block",
+                borderRadius: "8px",
               }}
               allow="camera; microphone; autoplay; encrypted-media"
             />
-          </Box>
+          </Card>
         </Container>
       </div>
       <footer>

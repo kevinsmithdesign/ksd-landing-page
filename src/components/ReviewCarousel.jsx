@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Rating } from "@mui/material";
+import { Box, Container, Typography, Rating, Card } from "@mui/material";
 import { motion } from "framer-motion";
 
 // Reviews to display in two marquee rows
@@ -94,7 +94,7 @@ const createReviewCards = (reviews) =>
   reviews
     .filter((r) => r.rating === 5)
     .map((r, i) => (
-      <Box
+      <Card
         key={i}
         sx={{
           width: 320,
@@ -102,7 +102,7 @@ const createReviewCards = (reviews) =>
           marginRight: "8px",
           padding: "40px",
           borderRadius: "16px",
-          backgroundColor: "background.paper",
+
           flexShrink: 0,
           display: "flex",
           flexDirection: "column",
@@ -136,7 +136,7 @@ const createReviewCards = (reviews) =>
             {r.role}
           </Typography>
         </Box>
-      </Box>
+      </Card>
     ));
 
 // Generate cards for top and bottom rows

@@ -45,6 +45,7 @@ import LightDarkModeToggle from "./components/LightDarkModeToggle";
 import DesignWorkWrapper from "./components/DesignWorkWrapper";
 import DevelopmentWorkWrapper from "./components/DevelopmentWorkWrapper";
 import FaqAccordion from "./components/FaqAccordion";
+import Me from "./assets/images/me.jpg";
 
 export default function App() {
   const cardStyles = {
@@ -701,13 +702,15 @@ export default function App() {
               <Grid size={{ xs: 12, md: 4 }}>
                 <Box
                   sx={{
-                    background: "#222",
+                    backgroundImage: `url(${Me})`,
                     width: "100%",
                     height: "500px",
-
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
                     borderRadius: "8px",
                   }}
-                ></Box>
+                />
               </Grid>
               <Grid size={{ xs: 12, md: 8 }}>
                 <Box

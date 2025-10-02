@@ -115,7 +115,7 @@ const createReviewCards = (reviews) =>
             color="text.primary"
             sx={{ lineHeight: 1.5, mb: 2 }}
           >
-            "{r.quote}"
+            {r.quote}
           </Typography>
           <Rating
             value={r.rating}

@@ -93,7 +93,7 @@ const DesignWork = () => {
   return (
     <>
       <Card style={cardStyles} sx={{ mb: 1 }}>
-        <Grid container spacing={10}>
+        <Grid container spacing={{ xs: 2, md: 10 }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
@@ -161,7 +161,7 @@ const DesignWork = () => {
         </Grid>
       </Card>
       <Card style={cardStyles} sx={{ mb: 1 }}>
-        <Grid container spacing={10}>
+        <Grid container spacing={{ xs: 2, md: 10 }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
@@ -230,7 +230,7 @@ const DesignWork = () => {
         </Grid>
       </Card>
       <Card style={cardStyles} sx={{ mb: 1 }}>
-        <Grid container spacing={10}>
+        <Grid container spacing={{ xs: 2, md: 10 }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
@@ -291,7 +291,7 @@ const DesignWork = () => {
         </Grid>
       </Card>
       <Card style={cardStyles} sx={{ mb: 1 }}>
-        <Grid container spacing={10}>
+        <Grid container spacing={{ xs: 2, md: 10 }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
@@ -352,7 +352,7 @@ const DesignWork = () => {
         </Grid>
       </Card>
       <Card style={cardStyles} sx={{ mb: 1 }}>
-        <Grid container spacing={10}>
+        <Grid container spacing={{ xs: 2, md: 10 }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
@@ -414,7 +414,7 @@ const DesignWork = () => {
         </Grid>
       </Card>
       <Card style={cardStyles} sx={{ mb: 1 }}>
-        <Grid container spacing={10}>
+        <Grid container spacing={{ xs: 2, md: 10 }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{

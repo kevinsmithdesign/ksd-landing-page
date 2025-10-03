@@ -1,5 +1,6 @@
-import { Box, Container, Typography, Rating, Card } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Container, Typography, Rating, Card, useMediaQuery, useTheme } from "@mui/material";
+import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
 
 // Reviews to display in two marquee rows
 const topReviews = [
@@ -89,31 +90,42 @@ const bottomReviews = [
   },
 ];
 
-// Create review cards
-const createReviewCards = (reviews) =>
-  reviews
+// Create review cards with responsive sizing
+const createReviewCards = (reviews, isMobile, isTablet) => {
+  // Responsive dimensions
+  const cardWidth = isMobile ? 280 : isTablet ? 300 : 320;
+  const cardHeight = isMobile ? 240 : isTablet ? 260 : 280;
+  const cardPadding = isMobile ? "24px" : isTablet ? "32px" : "40px";
+  const marginRight = isMobile ? "6px" : "8px";
+  
+  return reviews
     .filter((r) => r.rating === 5)
     .map((r, i) => (
       <Card
         key={i}
         sx={{
-          width: 320,
-          height: 280,
-          marginRight: "8px",
-          padding: "40px",
-          borderRadius: "16px",
-
+          width: cardWidth,
+          height: cardHeight,
+          marginRight: marginRight,
+          padding: cardPadding,
+          borderRadius: { xs: "12px", sm: "16px" },
           flexShrink: 0,
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between", // ← Add this back
+          justifyContent: "space-between",
+          // Add subtle shadow for better visual separation on mobile
+          boxShadow: isMobile ? "0 2px 12px rgba(0,0,0,0.08)" : undefined,
         }}
       >
         <Box>
           <Typography
             variant="body1"
             color="text.primary"
-            sx={{ lineHeight: 1.5, mb: 2 }}
+            sx={{ 
+              lineHeight: 1.5, 
+              mb: 2,
+              fontSize: { xs: "0.875rem", sm: "1rem" }
+            }}
           >
             {r.quote}
           </Typography>
@@ -138,39 +150,133 @@ const createReviewCards = (reviews) =>
         </Box>
       </Card>
     ));
-
-// Generate cards for top and bottom rows
-const topCards = createReviewCards(topReviews);
-const bottomCards = createReviewCards(bottomReviews);
+};
 
 export default function ReviewCarousel() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const shouldReduceMotion = useReducedMotion();
+  
+  // State for touch interactions
+  const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
+
+  // Generate cards with responsive sizing
+  const topCards = createReviewCards(topReviews, isMobile, isTablet);
+  const bottomCards = createReviewCards(bottomReviews, isMobile, isTablet);
+
+  // Responsive animation settings
+  const animationDuration = isMobile ? 60 : 40; // Slower on mobile for better UX
+  const rowSpacing = isMobile ? "6px" : "8px";
+
+  // Touch event handlers
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!touchStartX) return;
+    
+    const touchCurrentX = e.touches[0].clientX;
+    const diff = touchStartX - touchCurrentX;
+    
+    // Pause animation when user is actively swiping
+    if (Math.abs(diff) > 10) {
+      setIsPaused(true);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setTouchStartX(null);
+    // Resume animation after a short delay
+    setTimeout(() => setIsPaused(false), 1000);
+  };
+
+  // Animation variants based on user preferences and device
+  const getAnimationProps = (direction) => {
+    if (shouldReduceMotion) {
+      return {
+        animate: {},
+        transition: { duration: 0 }
+      };
+    }
+
+    const baseAnimation = direction === 'right' 
+      ? { x: ["-100%", "0%"] }
+      : { x: ["0%", "-100%"] };
+
+    return {
+      animate: isPaused ? {} : baseAnimation,
+      transition: {
+        repeat: isPaused ? 0 : Infinity,
+        duration: animationDuration,
+        ease: "linear",
+      }
+    };
+  };
+
   return (
-    <Container disableGutters maxWidth={false} sx={{ overflow: "hidden" }}>
+    <Container 
+      disableGutters 
+      maxWidth={false} 
+      sx={{ 
+        overflow: "hidden",
+        py: { xs: 1, sm: 2, md: 3 },
+        // Improve performance on mobile
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+      }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* TOP ROW - moves right */}
       <motion.div
-        style={{ display: "flex", willChange: "transform" }}
-        animate={{ x: ["-100%", "0%"] }}
-        transition={{
-          repeat: Infinity,
-          duration: 40,
-          ease: "linear",
+        style={{ 
+          display: "flex", 
+          willChange: shouldReduceMotion ? "auto" : "transform",
+          transform: "translateZ(0)",
         }}
+        {...getAnimationProps('right')}
       >
         {[...topCards, ...topCards]}
       </motion.div>
 
       {/* BOTTOM ROW - moves left */}
       <motion.div
-        style={{ display: "flex", marginTop: "8px", willChange: "transform" }}
-        animate={{ x: ["0%", "-100%"] }}
-        transition={{
-          repeat: Infinity,
-          duration: 40,
-          ease: "linear",
+        style={{ 
+          display: "flex", 
+          marginTop: rowSpacing, 
+          willChange: shouldReduceMotion ? "auto" : "transform",
+          transform: "translateZ(0)",
         }}
+        {...getAnimationProps('left')}
       >
         {[...bottomCards, ...bottomCards]}
       </motion.div>
+
+      {/* Optional: Add visual indicator for touch interaction on mobile */}
+      {isMobile && isPaused && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            bgcolor: "rgba(0,0,0,0.7)",
+            color: "white",
+            px: 2,
+            py: 1,
+            borderRadius: 1,
+            fontSize: "0.875rem",
+            pointerEvents: "none",
+            zIndex: 10,
+          }}
+        >
+          Paused
+        </Box>
+      )}
     </Container>
   );
 }

@@ -1,5 +1,6 @@
-import { Box, Container } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
+import { motion, useReducedMotion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 // Array of 6 placeholder images for the top row
 const topImageUrls = [
@@ -21,74 +22,173 @@ const bottomImageUrls = [
   "https://cdn.dribbble.com/userupload/14539275/file/original-6f67c0bf4025c11f9f02d62d4a78cc06.png?resize=1504x1128&vertical=center",
 ];
 
-// Create image cards with the correct aspect ratio
-const createCards = (imageUrls) =>
-  imageUrls.map((url, i) => (
+// Create image cards with responsive sizing
+const createCards = (imageUrls, isMobile, isTablet) => {
+  // Responsive dimensions
+  const cardWidth = isMobile ? "200px" : isTablet ? "280px" : "320px";
+  const cardHeight = isMobile ? "150px" : isTablet ? "210px" : "240px";
+  const marginRight = isMobile ? "12px" : isTablet ? "18px" : "24px";
+  
+  return imageUrls.map((url, i) => (
     <Box
       key={i}
       sx={{
-        height: "240px", // Base height
-        width: "320px", // Width that maintains 4:3 aspect ratio (240px * 1.33 = 320px)
-        borderRadius: "8px",
-        marginRight: "24px",
+        height: cardHeight,
+        width: cardWidth,
+        borderRadius: { xs: "6px", sm: "8px" },
+        marginRight: marginRight,
         flexShrink: 0,
-        overflow: "hidden", // Ensure image doesn't overflow the border radius
+        overflow: "hidden",
+        // Add subtle shadow for better visual separation on mobile
+        boxShadow: isMobile ? "0 2px 8px rgba(0,0,0,0.1)" : "none",
       }}
     >
       <img
         src={url}
-        alt={`Image ${i + 1}`}
-        loading="eager"
+        alt={`Portfolio image ${i + 1}`}
+        loading={i < 4 ? "eager" : "lazy"} // Prioritize first few images
         decoding="async"
         fetchPriority={i < 2 ? "high" : "auto"}
-        width="320"
-        height="240"
+        width={cardWidth.replace("px", "")}
+        height={cardHeight.replace("px", "")}
         style={{
           width: "100%",
           height: "100%",
-          objectFit: "cover", // This ensures the image covers the box without distortion
+          objectFit: "cover",
+          // Improve image rendering on mobile
+          imageRendering: "auto",
         }}
       />
     </Box>
   ));
+};
 
-// Generate cards for top and bottom rows
-const topCards = createCards(topImageUrls);
-const bottomCards = createCards(bottomImageUrls);
+export default function ImgCarousel() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const shouldReduceMotion = useReducedMotion();
+  
+  // State for touch interactions
+  const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
 
-export default function App() {
+  // Generate cards with responsive sizing
+  const topCards = createCards(topImageUrls, isMobile, isTablet);
+  const bottomCards = createCards(bottomImageUrls, isMobile, isTablet);
+
+  // Responsive animation settings
+  const animationDuration = isMobile ? 60 : 40; // Slower on mobile for better UX
+  const rowSpacing = isMobile ? "16px" : isTablet ? "24px" : "32px";
+
+  // Touch event handlers
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!touchStartX) return;
+    
+    const touchCurrentX = e.touches[0].clientX;
+    const diff = touchStartX - touchCurrentX;
+    
+    // Pause animation when user is actively swiping
+    if (Math.abs(diff) > 10) {
+      setIsPaused(true);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setTouchStartX(null);
+    // Resume animation after a short delay
+    setTimeout(() => setIsPaused(false), 1000);
+  };
+
+  // Animation variants based on user preferences and device
+  const getAnimationProps = (direction) => {
+    if (shouldReduceMotion) {
+      return {
+        animate: {},
+        transition: { duration: 0 }
+      };
+    }
+
+    const baseAnimation = direction === 'right' 
+      ? { x: ["-100%", "0%"] }
+      : { x: ["0%", "-100%"] };
+
+    return {
+      animate: isPaused ? {} : baseAnimation,
+      transition: {
+        repeat: isPaused ? 0 : Infinity,
+        duration: animationDuration,
+        ease: "linear",
+      }
+    };
+  };
 
   return (
     <Container
       disableGutters
       maxWidth={false}
-      sx={{ overflow: "hidden", py: 3 }}
+      sx={{ 
+        overflow: "hidden", 
+        py: { xs: 1, sm: 2, md: 3 },
+        // Improve performance on mobile
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+      }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {/* TOP ROW - moves right */}
       <motion.div
-        style={{ display: "flex", willChange: "transform" }}
-        animate={{ x: ["-100%", "0%"] }}
-        transition={{
-          repeat: Infinity,
-          duration: 40,
-          ease: "linear",
+        style={{ 
+          display: "flex", 
+          willChange: shouldReduceMotion ? "auto" : "transform",
+          // Optimize for mobile performance
+          transform: "translateZ(0)",
         }}
+        {...getAnimationProps('right')}
       >
         {[...topCards, ...topCards]}
       </motion.div>
 
       {/* BOTTOM ROW - moves left */}
       <motion.div
-        style={{ display: "flex", marginTop: "32px", willChange: "transform" }}
-        animate={{ x: ["0%", "-100%"] }}
-        transition={{
-          repeat: Infinity,
-          duration: 40,
-          ease: "linear",
+        style={{ 
+          display: "flex", 
+          marginTop: rowSpacing, 
+          willChange: shouldReduceMotion ? "auto" : "transform",
+          transform: "translateZ(0)",
         }}
+        {...getAnimationProps('left')}
       >
         {[...bottomCards, ...bottomCards]}
       </motion.div>
+
+      {/* Optional: Add visual indicator for touch interaction on mobile */}
+      {isMobile && isPaused && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            bgcolor: "rgba(0,0,0,0.7)",
+            color: "white",
+            px: 2,
+            py: 1,
+            borderRadius: 1,
+            fontSize: "0.875rem",
+            pointerEvents: "none",
+            zIndex: 10,
+          }}
+        >
+          Paused
+        </Box>
+      )}
     </Container>
   );
 }
